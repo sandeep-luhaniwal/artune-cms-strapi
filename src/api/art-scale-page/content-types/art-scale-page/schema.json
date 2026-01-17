@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "art_scale_pages",
+  "info": {
+    "singularName": "art-scale-page",
+    "pluralName": "art-scale-pages",
+    "displayName": "art-scale-page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Hero": {
+      "type": "string"
+    }
+  }
+}
