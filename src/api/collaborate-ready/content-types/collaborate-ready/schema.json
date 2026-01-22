@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "collaborate_readies",
+  "info": {
+    "singularName": "collaborate-ready",
+    "pluralName": "collaborate-readies",
+    "displayName": "CollaborateReady"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "button_one": {
+      "type": "string"
+    },
+    "button_two": {
+      "type": "string"
+    },
+    "button_one_url": {
+      "type": "string"
+    },
+    "button_two_url": {
+      "type": "string"
+    }
+  }
+}

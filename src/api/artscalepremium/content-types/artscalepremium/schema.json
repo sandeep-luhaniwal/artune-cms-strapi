@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artscalepremiums",
+  "info": {
+    "singularName": "artscalepremium",
+    "pluralName": "artscalepremiums",
+    "displayName": "Artscalepremium"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "para1": {
+      "type": "text"
+    },
+    "para2": {
+      "type": "text"
+    },
+    "para3": {
+      "type": "text"
+    },
+    "para4": {
+      "type": "text"
+    },
+    "para5": {
+      "type": "text"
+    },
+    "para6": {
+      "type": "text"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

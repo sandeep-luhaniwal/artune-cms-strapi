@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artscalehows",
+  "info": {
+    "singularName": "artscalehow",
+    "pluralName": "artscalehows",
+    "displayName": "Artscalehow"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "button_one": {
+      "type": "string"
+    },
+    "button_two": {
+      "type": "string"
+    },
+    "button_one_url": {
+      "type": "string"
+    },
+    "button_two_url": {
+      "type": "string"
+    },
+    "cardhow": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.cardhow"
+      ]
+    }
+  }
+}

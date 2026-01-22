@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_spinestepcards",
+  "info": {
+    "displayName": "spinestepcard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

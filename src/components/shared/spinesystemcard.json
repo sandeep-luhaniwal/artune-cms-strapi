@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_spinesystemcards",
+  "info": {
+    "displayName": "spinesystemcard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Size": {
+      "type": "string"
+    },
+    "badge": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

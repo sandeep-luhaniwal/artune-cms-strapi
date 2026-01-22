@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_cardstroys",
+  "info": {
+    "displayName": "cardstroy"
+  },
+  "options": {},
+  "attributes": {
+    "tile": {
+      "type": "string"
+    },
+    "bage": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

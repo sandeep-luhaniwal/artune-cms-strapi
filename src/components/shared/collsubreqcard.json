@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_collsubreqcards",
+  "info": {
+    "displayName": "collsubreqcard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

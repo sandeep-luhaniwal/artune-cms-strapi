@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_sizeherocards",
+  "info": {
+    "displayName": "sizeherocard"
+  },
+  "options": {},
+  "attributes": {
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

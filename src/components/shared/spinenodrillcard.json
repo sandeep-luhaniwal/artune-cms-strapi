@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_spinenodrillcards",
+  "info": {
+    "displayName": "spinenodrillcard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

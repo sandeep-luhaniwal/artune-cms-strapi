@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_philosophyjourneycards",
+  "info": {
+    "displayName": "philosophyjourneycard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

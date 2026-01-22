@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_aboutideacards",
+  "info": {
+    "displayName": "aboutideacard"
+  },
+  "options": {},
+  "attributes": {
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

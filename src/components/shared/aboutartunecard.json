@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_aboutartunecards",
+  "info": {
+    "displayName": "aboutartunecard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artscalestories",
+  "info": {
+    "singularName": "artscalestory",
+    "pluralName": "artscalestories",
+    "displayName": "Artscalestory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "card": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.cardstroy"
+      ]
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    }
+  }
+}

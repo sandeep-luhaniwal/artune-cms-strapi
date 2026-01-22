@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "philosophyheroes",
+  "info": {
+    "singularName": "philosophyhero",
+    "pluralName": "philosophyheroes",
+    "displayName": "Philosophyhero"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "bgimg": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

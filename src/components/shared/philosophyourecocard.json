@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_philosophyourecocards",
+  "info": {
+    "displayName": "philosophyourecocard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artscalepartners",
+  "info": {
+    "singularName": "artscalepartner",
+    "pluralName": "artscalepartners",
+    "displayName": "Artscalepartner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button_one": {
+      "type": "string"
+    },
+    "button_one_url": {
+      "type": "string"
+    },
+    "button_two": {
+      "type": "string"
+    },
+    "button_two_url": {
+      "type": "string"
+    },
+    "download_button": {
+      "type": "string"
+    },
+    "download_button_url": {
+      "type": "string"
+    }
+  }
+}

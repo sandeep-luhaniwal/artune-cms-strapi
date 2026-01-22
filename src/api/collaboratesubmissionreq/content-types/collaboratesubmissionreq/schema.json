@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "collaboratesubmissionreqs",
+  "info": {
+    "singularName": "collaboratesubmissionreq",
+    "pluralName": "collaboratesubmissionreqs",
+    "displayName": "Collaboratesubmissionreq"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "collsubreq": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.collsubreqcard"
+      ]
+    }
+  }
+}

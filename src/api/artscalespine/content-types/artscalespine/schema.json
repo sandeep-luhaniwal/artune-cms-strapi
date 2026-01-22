@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artscalespines",
+  "info": {
+    "singularName": "artscalespine",
+    "pluralName": "artscalespines",
+    "displayName": "Artscalespine"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "card": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.title"
+      ]
+    }
+  }
+}

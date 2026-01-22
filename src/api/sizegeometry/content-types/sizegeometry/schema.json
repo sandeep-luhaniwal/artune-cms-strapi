@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "sizegeometries",
+  "info": {
+    "singularName": "sizegeometry",
+    "pluralName": "sizegeometries",
+    "displayName": "Sizegeometry"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "description1": {
+      "type": "text"
+    },
+    "size": {
+      "type": "string"
+    },
+    "sizedetails": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "description_one": {
+      "type": "string"
+    },
+    "imgtitle": {
+      "type": "string"
+    },
+    "imgdes": {
+      "type": "string"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "imgdetails": {
+      "type": "string"
+    }
+  }
+}
