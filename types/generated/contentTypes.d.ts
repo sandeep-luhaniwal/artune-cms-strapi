@@ -577,9 +577,18 @@ export interface ApiAboutourstoryAboutourstory extends Struct.SingleTypeSchema {
     >;
     badge: Schema.Attribute.String;
     button: Schema.Attribute.String;
+    button_img: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     button_one: Schema.Attribute.String;
+    button_one_img: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     button_one_url: Schema.Attribute.String;
     button_two: Schema.Attribute.String;
+    button_two_img: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     button_url: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -865,11 +874,20 @@ export interface ApiArtscalepremiumArtscalepremium
     > &
       Schema.Attribute.Private;
     para1: Schema.Attribute.Text;
+    para1_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     para2: Schema.Attribute.Text;
+    para2_img: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     para3: Schema.Attribute.Text;
+    para3_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     para4: Schema.Attribute.Text;
+    para4_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     para5: Schema.Attribute.Text;
+    para5_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     para6: Schema.Attribute.Text;
+    para6_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -928,6 +946,7 @@ export interface ApiArtscalespineArtscalespine
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
+    iconimg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -996,6 +1015,7 @@ export interface ApiCollaborateReadyCollaborateReady
       Schema.Attribute.Private;
     description: Schema.Attribute.String;
     heading: Schema.Attribute.String;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1316,6 +1336,7 @@ export interface ApiPhilosophymanifestoPhilosophymanifesto
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1468,6 +1489,71 @@ export interface ApiSizeartSizeart extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiSizedetailSizedetail extends Struct.SingleTypeSchema {
+  collectionName: 'sizedetails';
+  info: {
+    displayName: 'Sizedetail';
+    pluralName: 'sizedetails';
+    singularName: 'sizedetail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    description_one: Schema.Attribute.Text;
+    description_two: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sizedetail.sizedetail'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sizedetailcard: Schema.Attribute.DynamicZone<['shared.sizedetailcard']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSizefaqSizefaq extends Struct.SingleTypeSchema {
+  collectionName: 'sizefaqs';
+  info: {
+    displayName: 'Sizefaq';
+    pluralName: 'sizefaqs';
+    singularName: 'sizefaq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button_one: Schema.Attribute.String;
+    button_one_url: Schema.Attribute.String;
+    button_two: Schema.Attribute.String;
+    button_two_url: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sizefaq.sizefaq'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sizefaqcard: Schema.Attribute.DynamicZone<['shared.sizefaqcard']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSizeformatSizeformat extends Struct.SingleTypeSchema {
   collectionName: 'sizeformats';
   info: {
@@ -1562,6 +1648,140 @@ export interface ApiSizeheroSizehero extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     sizeherocard: Schema.Attribute.DynamicZone<['shared.sizeherocard']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSizepremadeSizepremade extends Struct.SingleTypeSchema {
+  collectionName: 'sizepremades';
+  info: {
+    displayName: 'Sizepremade';
+    pluralName: 'sizepremades';
+    singularName: 'sizepremade';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button_one: Schema.Attribute.String;
+    button_one_url: Schema.Attribute.String;
+    button_two: Schema.Attribute.String;
+    button_two_url: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sizepremade.sizepremade'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sizepremadecard: Schema.Attribute.DynamicZone<['shared.sizepremadecard']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSizetrustSizetrust extends Struct.SingleTypeSchema {
+  collectionName: 'sizetrusts';
+  info: {
+    displayName: 'Sizetrust';
+    pluralName: 'sizetrusts';
+    singularName: 'sizetrust';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sizetrust.sizetrust'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sizetrustcard: Schema.Attribute.DynamicZone<['shared.sizetrustcard']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSizetwomaterialSizetwomaterial
+  extends Struct.SingleTypeSchema {
+  collectionName: 'sizetwomaterials';
+  info: {
+    displayName: 'Sizetwomaterial';
+    pluralName: 'sizetwomaterials';
+    singularName: 'sizetwomaterial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sizetwomaterial.sizetwomaterial'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sizetwomaterialcard: Schema.Attribute.DynamicZone<
+      ['shared.sizetwomaterialcard']
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSizeyourformatSizeyourformat
+  extends Struct.SingleTypeSchema {
+  collectionName: 'sizeyourformats';
+  info: {
+    displayName: 'Sizeyourformat';
+    pluralName: 'sizeyourformats';
+    singularName: 'sizeyourformat';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button_one: Schema.Attribute.String;
+    button_one_url: Schema.Attribute.String;
+    button_two: Schema.Attribute.String;
+    button_two_url: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sizeyourformat.sizeyourformat'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sizeyourformatcard: Schema.Attribute.DynamicZone<
+      ['shared.sizeyourformatcard']
+    >;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1730,6 +1950,7 @@ export interface ApiSpineonesystemSpineonesystem
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     spinesystemcard: Schema.Attribute.DynamicZone<['shared.spinesystemcard']>;
+    text_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     text1: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1779,6 +2000,9 @@ export interface ApiSpinestepSpinestep extends Struct.SingleTypeSchema {
   attributes: {
     badge: Schema.Attribute.String;
     button: Schema.Attribute.String;
+    button_img: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     button_url: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -2375,9 +2599,15 @@ declare module '@strapi/strapi' {
       'api::philosophyoureco.philosophyoureco': ApiPhilosophyourecoPhilosophyoureco;
       'api::philosophyvalue.philosophyvalue': ApiPhilosophyvaluePhilosophyvalue;
       'api::sizeart.sizeart': ApiSizeartSizeart;
+      'api::sizedetail.sizedetail': ApiSizedetailSizedetail;
+      'api::sizefaq.sizefaq': ApiSizefaqSizefaq;
       'api::sizeformat.sizeformat': ApiSizeformatSizeformat;
       'api::sizegeometry.sizegeometry': ApiSizegeometrySizegeometry;
       'api::sizehero.sizehero': ApiSizeheroSizehero;
+      'api::sizepremade.sizepremade': ApiSizepremadeSizepremade;
+      'api::sizetrust.sizetrust': ApiSizetrustSizetrust;
+      'api::sizetwomaterial.sizetwomaterial': ApiSizetwomaterialSizetwomaterial;
+      'api::sizeyourformat.sizeyourformat': ApiSizeyourformatSizeyourformat;
       'api::spineadvantage.spineadvantage': ApiSpineadvantageSpineadvantage;
       'api::spineget.spineget': ApiSpinegetSpineget;
       'api::spinehero.spinehero': ApiSpineheroSpinehero;

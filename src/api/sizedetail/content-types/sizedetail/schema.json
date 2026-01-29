@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "sizedetails",
+  "info": {
+    "singularName": "sizedetail",
+    "pluralName": "sizedetails",
+    "displayName": "Sizedetail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "description_one": {
+      "type": "text"
+    },
+    "description_two": {
+      "type": "text"
+    },
+    "sizedetailcard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.sizedetailcard"
+      ]
+    }
+  }
+}

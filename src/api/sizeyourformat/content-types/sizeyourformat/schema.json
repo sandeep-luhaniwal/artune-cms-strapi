@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "sizeyourformats",
+  "info": {
+    "singularName": "sizeyourformat",
+    "pluralName": "sizeyourformats",
+    "displayName": "Sizeyourformat"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string"
+    },
+    "button_one": {
+      "type": "string"
+    },
+    "button_two": {
+      "type": "string"
+    },
+    "button_one_url": {
+      "type": "string"
+    },
+    "button_two_url": {
+      "type": "string"
+    },
+    "sizeyourformatcard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.sizeyourformatcard"
+      ]
+    }
+  }
+}

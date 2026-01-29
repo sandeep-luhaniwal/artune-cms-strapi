@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_sizedetailcards",
+  "info": {
+    "displayName": "sizedetailcard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text1": {
+      "type": "string"
+    },
+    "text2": {
+      "type": "string"
+    },
+    "text3": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

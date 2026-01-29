@@ -37,6 +37,16 @@
       "components": [
         "shared.spinestepcard"
       ]
+    },
+    "button_img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

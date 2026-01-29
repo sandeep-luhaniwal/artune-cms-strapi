@@ -25,6 +25,16 @@
       "components": [
         "shared.spinesystemcard"
       ]
+    },
+    "text_img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

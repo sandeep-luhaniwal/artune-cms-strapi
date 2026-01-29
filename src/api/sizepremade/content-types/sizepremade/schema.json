@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "sizepremades",
+  "info": {
+    "singularName": "sizepremade",
+    "pluralName": "sizepremades",
+    "displayName": "Sizepremade"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "sizepremadecard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.sizepremadecard"
+      ]
+    },
+    "button_one": {
+      "type": "string"
+    },
+    "button_two": {
+      "type": "string"
+    },
+    "button_one_url": {
+      "type": "string"
+    },
+    "button_two_url": {
+      "type": "string"
+    }
+  }
+}

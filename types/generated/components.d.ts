@@ -7,6 +7,8 @@ export interface SharedAboutartunecard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.String;
+    description1: Schema.Attribute.String;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -17,6 +19,7 @@ export interface SharedAboutideacard extends Struct.ComponentSchema {
     displayName: 'aboutideacard';
   };
   attributes: {
+    iconimg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
@@ -55,6 +58,7 @@ export interface SharedCardhow extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.String;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -66,6 +70,7 @@ export interface SharedCards extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.Text;
   };
 }
@@ -91,6 +96,7 @@ export interface SharedCollaboratecardjoin extends Struct.ComponentSchema {
   attributes: {
     button: Schema.Attribute.String;
     description: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -102,6 +108,7 @@ export interface SharedCollaborateslidercard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -113,6 +120,7 @@ export interface SharedCollaboratewelcomecard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.String;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -136,6 +144,7 @@ export interface SharedCollsubreqcard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.String;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -156,6 +165,7 @@ export interface SharedPhilosophyjourneycard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.String;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -182,6 +192,7 @@ export interface SharedPhilosophyourecocard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -225,6 +236,30 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSizedetailcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sizedetailcards';
+  info: {
+    displayName: 'sizedetailcard';
+  };
+  attributes: {
+    text1: Schema.Attribute.String;
+    text2: Schema.Attribute.String;
+    text3: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedSizefaqcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sizefaqcards';
+  info: {
+    displayName: 'sizefaqcard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedSizeherocard extends Struct.ComponentSchema {
   collectionName: 'components_shared_sizeherocards';
   info: {
@@ -233,6 +268,64 @@ export interface SharedSizeherocard extends Struct.ComponentSchema {
   attributes: {
     img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     size: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedSizepremadecard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sizepremadecards';
+  info: {
+    displayName: 'sizepremadecard';
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedSizetrustcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sizetrustcards';
+  info: {
+    displayName: 'sizetrustcard';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedSizetwomaterialcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sizetwomaterialcards';
+  info: {
+    displayName: 'sizetwomaterialcard';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    description_one: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    text1: Schema.Attribute.Text;
+    text2: Schema.Attribute.Text;
+    text3: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedSizeyourformatcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sizeyourformatcards';
+  info: {
+    displayName: 'sizeyourformatcard';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -256,6 +349,7 @@ export interface SharedSpinenodrillcard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -267,6 +361,7 @@ export interface SharedSpineslidercard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -278,6 +373,7 @@ export interface SharedSpinestepcard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -337,7 +433,13 @@ declare module '@strapi/strapi' {
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
+      'shared.sizedetailcard': SharedSizedetailcard;
+      'shared.sizefaqcard': SharedSizefaqcard;
       'shared.sizeherocard': SharedSizeherocard;
+      'shared.sizepremadecard': SharedSizepremadecard;
+      'shared.sizetrustcard': SharedSizetrustcard;
+      'shared.sizetwomaterialcard': SharedSizetwomaterialcard;
+      'shared.sizeyourformatcard': SharedSizeyourformatcard;
       'shared.slider': SharedSlider;
       'shared.spinenodrillcard': SharedSpinenodrillcard;
       'shared.spineslidercard': SharedSpineslidercard;

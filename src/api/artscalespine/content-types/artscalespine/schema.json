@@ -38,6 +38,16 @@
       "components": [
         "shared.title"
       ]
+    },
+    "iconimg": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

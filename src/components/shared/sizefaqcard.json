@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_sizefaqcards",
+  "info": {
+    "displayName": "sizefaqcard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "sizetrusts",
+  "info": {
+    "singularName": "sizetrust",
+    "pluralName": "sizetrusts",
+    "displayName": "Sizetrust"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "sizetrustcard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.sizetrustcard"
+      ]
+    }
+  }
+}

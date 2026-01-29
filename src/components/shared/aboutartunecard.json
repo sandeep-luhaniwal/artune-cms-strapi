@@ -10,6 +10,19 @@
     },
     "description": {
       "type": "string"
+    },
+    "description1": {
+      "type": "string"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   },
   "config": {}
