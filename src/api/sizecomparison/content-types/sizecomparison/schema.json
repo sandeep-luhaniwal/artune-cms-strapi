@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "sizecomparisons",
+  "info": {
+    "singularName": "sizecomparison",
+    "pluralName": "sizecomparisons",
+    "displayName": "Sizecomparison"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "tabel": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.tabel"
+      ]
+    }
+  }
+}

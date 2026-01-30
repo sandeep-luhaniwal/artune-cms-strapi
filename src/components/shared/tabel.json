@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_tabels",
+  "info": {
+    "displayName": "tabel"
+  },
+  "options": {},
+  "attributes": {
+    "text1": {
+      "type": "string"
+    },
+    "text2": {
+      "type": "string"
+    },
+    "text3": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

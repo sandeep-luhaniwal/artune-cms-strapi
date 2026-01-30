@@ -149,6 +149,42 @@ export interface SharedCollsubreqcard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCommonwhychoosecard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_commonwhychoosecards';
+  info: {
+    displayName: 'commonwhychoosecard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedDetailscard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_detailscards';
+  info: {
+    displayName: 'detailscard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedHomewhyartunecard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_homewhyartunecards';
+  info: {
+    displayName: 'homewhyartunecard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -390,6 +426,18 @@ export interface SharedSpinesystemcard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTabel extends Struct.ComponentSchema {
+  collectionName: 'components_shared_tabels';
+  info: {
+    displayName: 'tabel';
+  };
+  attributes: {
+    text1: Schema.Attribute.String;
+    text2: Schema.Attribute.String;
+    text3: Schema.Attribute.String;
+  };
+}
+
 export interface SharedTile extends Struct.ComponentSchema {
   collectionName: 'components_shared_tiles';
   info: {
@@ -426,6 +474,9 @@ declare module '@strapi/strapi' {
       'shared.collaboratewelcomecard': SharedCollaboratewelcomecard;
       'shared.collfitcard': SharedCollfitcard;
       'shared.collsubreqcard': SharedCollsubreqcard;
+      'shared.commonwhychoosecard': SharedCommonwhychoosecard;
+      'shared.detailscard': SharedDetailscard;
+      'shared.homewhyartunecard': SharedHomewhyartunecard;
       'shared.media': SharedMedia;
       'shared.philosophyjourneycard': SharedPhilosophyjourneycard;
       'shared.philosophymaterialcard': SharedPhilosophymaterialcard;
@@ -445,6 +496,7 @@ declare module '@strapi/strapi' {
       'shared.spineslidercard': SharedSpineslidercard;
       'shared.spinestepcard': SharedSpinestepcard;
       'shared.spinesystemcard': SharedSpinesystemcard;
+      'shared.tabel': SharedTabel;
       'shared.tile': SharedTile;
       'shared.title': SharedTitle;
     }

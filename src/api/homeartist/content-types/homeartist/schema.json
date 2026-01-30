@@ -1,36 +1,37 @@
 {
-  "kind": "collectionType",
-  "collectionName": "artscalepremiums",
+  "kind": "singleType",
+  "collectionName": "homeartists",
   "info": {
-    "singularName": "artscalepremium",
-    "pluralName": "artscalepremiums",
-    "displayName": "Artscalepremium"
+    "singularName": "homeartist",
+    "pluralName": "homeartists",
+    "displayName": "homeartist"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "heading": {
       "type": "string"
     },
-    "para1": {
-      "type": "text"
+    "description": {
+      "type": "string"
     },
-    "para2": {
-      "type": "text"
+    "button": {
+      "type": "string"
     },
-    "para3": {
-      "type": "text"
+    "button_url": {
+      "type": "string"
     },
-    "para4": {
-      "type": "text"
-    },
-    "para5": {
-      "type": "text"
-    },
-    "para6": {
-      "type": "text"
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "img": {
       "type": "media",
@@ -42,7 +43,7 @@
         "audios"
       ]
     },
-    "para1_img": {
+    "img_one": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -52,7 +53,7 @@
         "audios"
       ]
     },
-    "para2_img": {
+    "img_two": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -62,37 +63,7 @@
         "audios"
       ]
     },
-    "para3_img": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "para4_img": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "para5_img": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "para6_img": {
+    "img_three": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [

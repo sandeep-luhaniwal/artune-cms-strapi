@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "commonoffers",
+  "info": {
+    "singularName": "commonoffer",
+    "pluralName": "commonoffers",
+    "displayName": "commonoffer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "para1": {
+      "type": "string"
+    },
+    "para2": {
+      "type": "text"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "heading": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "description_one": {
+      "type": "text"
+    },
+    "description_two": {
+      "type": "text"
+    }
+  }
+}

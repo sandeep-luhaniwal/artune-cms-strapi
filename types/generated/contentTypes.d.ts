@@ -876,10 +876,7 @@ export interface ApiArtscalepremiumArtscalepremium
     para1: Schema.Attribute.Text;
     para1_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     para2: Schema.Attribute.Text;
-    para2_img: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    para2_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     para3: Schema.Attribute.Text;
     para3_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     para4: Schema.Attribute.Text;
@@ -1220,6 +1217,231 @@ export interface ApiCollaboratwelcomeCollaboratwelcome
   };
 }
 
+export interface ApiCommonofferCommonoffer extends Struct.SingleTypeSchema {
+  collectionName: 'commonoffers';
+  info: {
+    displayName: 'commonoffer';
+    pluralName: 'commonoffers';
+    singularName: 'commonoffer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    description_one: Schema.Attribute.Text;
+    description_two: Schema.Attribute.Text;
+    heading: Schema.Attribute.Text;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::commonoffer.commonoffer'
+    > &
+      Schema.Attribute.Private;
+    para1: Schema.Attribute.String;
+    para2: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCommonwhychooseCommonwhychoose
+  extends Struct.SingleTypeSchema {
+  collectionName: 'commonwhychooses';
+  info: {
+    displayName: 'commonwhychoose';
+    pluralName: 'commonwhychooses';
+    singularName: 'commonwhychoose';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    commonwhychoosecard: Schema.Attribute.DynamicZone<
+      ['shared.commonwhychoosecard']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::commonwhychoose.commonwhychoose'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDetailscardDetailscard extends Struct.SingleTypeSchema {
+  collectionName: 'detailscards';
+  info: {
+    displayName: 'detailscard';
+    pluralName: 'detailscards';
+    singularName: 'detailscard';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    detailscard: Schema.Attribute.DynamicZone<['shared.detailscard']>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::detailscard.detailscard'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomeartistHomeartist extends Struct.SingleTypeSchema {
+  collectionName: 'homeartists';
+  info: {
+    displayName: 'homeartist';
+    pluralName: 'homeartists';
+    singularName: 'homeartist';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    img_one: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    img_three: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    img_two: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homeartist.homeartist'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomebgvideoHomebgvideo extends Struct.SingleTypeSchema {
+  collectionName: 'homebgvideos';
+  info: {
+    displayName: 'homebgvideo';
+    pluralName: 'homebgvideos';
+    singularName: 'homebgvideo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bgimg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homebgvideo.homebgvideo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomethreedHomethreed extends Struct.SingleTypeSchema {
+  collectionName: 'homethreeds';
+  info: {
+    displayName: 'homethreed';
+    pluralName: 'homethreeds';
+    singularName: 'homethreed';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homethreed.homethreed'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomewhyartuneHomewhyartune extends Struct.SingleTypeSchema {
+  collectionName: 'homewhyartunes';
+  info: {
+    displayName: 'homewhyartune';
+    pluralName: 'homewhyartunes';
+    singularName: 'homewhyartune';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    homewhyartunecard: Schema.Attribute.DynamicZone<
+      ['shared.homewhyartunecard']
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homewhyartune.homewhyartune'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPhilosophyecoPhilosophyeco extends Struct.SingleTypeSchema {
   collectionName: 'philosophyecos';
   info: {
@@ -1483,6 +1705,38 @@ export interface ApiSizeartSizeart extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSizecomparisonSizecomparison
+  extends Struct.SingleTypeSchema {
+  collectionName: 'sizecomparisons';
+  info: {
+    displayName: 'Sizecomparison';
+    pluralName: 'sizecomparisons';
+    singularName: 'sizecomparison';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sizecomparison.sizecomparison'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tabel: Schema.Attribute.DynamicZone<['shared.tabel']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2591,6 +2845,13 @@ declare module '@strapi/strapi' {
       'api::collaboratesubmissionreq.collaboratesubmissionreq': ApiCollaboratesubmissionreqCollaboratesubmissionreq;
       'api::collaboratewhyjoin.collaboratewhyjoin': ApiCollaboratewhyjoinCollaboratewhyjoin;
       'api::collaboratwelcome.collaboratwelcome': ApiCollaboratwelcomeCollaboratwelcome;
+      'api::commonoffer.commonoffer': ApiCommonofferCommonoffer;
+      'api::commonwhychoose.commonwhychoose': ApiCommonwhychooseCommonwhychoose;
+      'api::detailscard.detailscard': ApiDetailscardDetailscard;
+      'api::homeartist.homeartist': ApiHomeartistHomeartist;
+      'api::homebgvideo.homebgvideo': ApiHomebgvideoHomebgvideo;
+      'api::homethreed.homethreed': ApiHomethreedHomethreed;
+      'api::homewhyartune.homewhyartune': ApiHomewhyartuneHomewhyartune;
       'api::philosophyeco.philosophyeco': ApiPhilosophyecoPhilosophyeco;
       'api::philosophyhero.philosophyhero': ApiPhilosophyheroPhilosophyhero;
       'api::philosophyjourney.philosophyjourney': ApiPhilosophyjourneyPhilosophyjourney;
@@ -2599,6 +2860,7 @@ declare module '@strapi/strapi' {
       'api::philosophyoureco.philosophyoureco': ApiPhilosophyourecoPhilosophyoureco;
       'api::philosophyvalue.philosophyvalue': ApiPhilosophyvaluePhilosophyvalue;
       'api::sizeart.sizeart': ApiSizeartSizeart;
+      'api::sizecomparison.sizecomparison': ApiSizecomparisonSizecomparison;
       'api::sizedetail.sizedetail': ApiSizedetailSizedetail;
       'api::sizefaq.sizefaq': ApiSizefaqSizefaq;
       'api::sizeformat.sizeformat': ApiSizeformatSizeformat;
