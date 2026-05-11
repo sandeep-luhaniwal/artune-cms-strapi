@@ -161,6 +161,21 @@ export interface SharedCommonwhychoosecard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedContent extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contents';
+  info: {
+    displayName: 'content';
+  };
+  attributes: {
+    auote: Schema.Attribute.String;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    text: Schema.Attribute.Blocks;
+  };
+}
+
 export interface SharedDetailscard extends Struct.ComponentSchema {
   collectionName: 'components_shared_detailscards';
   info: {
@@ -475,6 +490,7 @@ declare module '@strapi/strapi' {
       'shared.collfitcard': SharedCollfitcard;
       'shared.collsubreqcard': SharedCollsubreqcard;
       'shared.commonwhychoosecard': SharedCommonwhychoosecard;
+      'shared.content': SharedContent;
       'shared.detailscard': SharedDetailscard;
       'shared.homewhyartunecard': SharedHomewhyartunecard;
       'shared.media': SharedMedia;

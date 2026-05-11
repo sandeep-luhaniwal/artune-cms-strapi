@@ -991,6 +991,39 @@ export interface ApiArtscalestoryArtscalestory
   };
 }
 
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    displayName: 'blog';
+    pluralName: 'blogs';
+    singularName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blog: Schema.Attribute.Relation<'oneToOne', 'api::blog.blog'>;
+    content: Schema.Attribute.DynamicZone<['shared.content']>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    publishedDate: Schema.Attribute.Date;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'title'>;
+    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCollaborateReadyCollaborateReady
   extends Struct.SingleTypeSchema {
   collectionName: 'collaborate_readies';
@@ -2838,6 +2871,7 @@ declare module '@strapi/strapi' {
       'api::artscalesoution.artscalesoution': ApiArtscalesoutionArtscalesoution;
       'api::artscalespine.artscalespine': ApiArtscalespineArtscalespine;
       'api::artscalestory.artscalestory': ApiArtscalestoryArtscalestory;
+      'api::blog.blog': ApiBlogBlog;
       'api::collaborate-ready.collaborate-ready': ApiCollaborateReadyCollaborateReady;
       'api::collaboratefit.collaboratefit': ApiCollaboratefitCollaboratefit;
       'api::collaboratehero.collaboratehero': ApiCollaborateheroCollaboratehero;

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_contents",
+  "info": {
+    "displayName": "content"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "auote": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
