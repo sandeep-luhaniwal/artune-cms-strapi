@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_newdrops",
+  "info": {
+    "displayName": "newdrop"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "badgebgcolor": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "bgimage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

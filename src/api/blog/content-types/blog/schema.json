@@ -14,13 +14,6 @@
     "title": {
       "type": "string"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
-    "description": {
-      "type": "blocks"
-    },
     "thumbnail": {
       "type": "media",
       "multiple": false,
@@ -31,10 +24,30 @@
         "audios"
       ]
     },
-    "blog": {
+    "blogcategories": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::blog.blog"
+      "relation": "oneToMany",
+      "target": "api::blog-category.blog-category",
+      "mappedBy": "blog"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "read_time": {
+      "type": "string"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.content"
+      ]
     },
     "publishedDate": {
       "type": "date"
@@ -44,12 +57,6 @@
     },
     "seoDescription": {
       "type": "text"
-    },
-    "content": {
-      "type": "dynamiczone",
-      "components": [
-        "shared.content"
-      ]
     }
   }
 }

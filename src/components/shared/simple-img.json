@@ -1,25 +1,19 @@
 {
-  "collectionName": "components_shared_contents",
+  "collectionName": "components_shared_simple_imgs",
   "info": {
-    "displayName": "content"
+    "displayName": "simple_img"
   },
   "options": {},
   "attributes": {
-    "subheading": {
-      "type": "string"
-    },
     "image": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ]
-    },
-    "text": {
-      "type": "blocks"
     }
   },
   "config": {}

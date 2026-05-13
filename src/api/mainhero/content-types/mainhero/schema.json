@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "mainheroes",
+  "info": {
+    "singularName": "mainhero",
+    "pluralName": "mainheroes",
+    "displayName": "Mainhero"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "shared.mainleftheading",
+      "repeatable": false
+    },
+    "offer": {
+      "type": "component",
+      "component": "shared.offerhero",
+      "repeatable": false
+    },
+    "simpleimage": {
+      "type": "component",
+      "component": "shared.simple-img",
+      "repeatable": false
+    },
+    "newdrop": {
+      "type": "component",
+      "component": "shared.newdrop",
+      "repeatable": false
+    }
+  }
+}

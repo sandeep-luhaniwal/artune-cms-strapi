@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_mainheadings",
+  "info": {
+    "displayName": "mainheading"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "bgcolor": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

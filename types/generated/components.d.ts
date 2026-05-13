@@ -88,6 +88,20 @@ export interface SharedCardstroy extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCodevalue extends Struct.ComponentSchema {
+  collectionName: 'components_shared_codevalues';
+  info: {
+    displayName: 'codevalue';
+  };
+  attributes: {
+    code: Schema.Attribute.String;
+    code_value: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    headingcode: Schema.Attribute.String;
+    headingoff: Schema.Attribute.String;
+  };
+}
+
 export interface SharedCollaboratecardjoin extends Struct.ComponentSchema {
   collectionName: 'components_shared_collaboratecardjoins';
   info: {
@@ -167,11 +181,11 @@ export interface SharedContent extends Struct.ComponentSchema {
     displayName: 'content';
   };
   attributes: {
-    auote: Schema.Attribute.String;
     image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    subheading: Schema.Attribute.String;
     text: Schema.Attribute.Blocks;
   };
 }
@@ -200,6 +214,43 @@ export interface SharedHomewhyartunecard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedMainheading extends Struct.ComponentSchema {
+  collectionName: 'components_shared_mainheadings';
+  info: {
+    displayName: 'mainheading';
+  };
+  attributes: {
+    bgcolor: Schema.Attribute.String;
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedMainleftheading extends Struct.ComponentSchema {
+  collectionName: 'components_shared_mainleftheadings';
+  info: {
+    displayName: 'mainleftheading';
+  };
+  attributes: {
+    bgcolorcode: Schema.Attribute.String;
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    image_left: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    image_right: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    images_main: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -207,6 +258,34 @@ export interface SharedMedia extends Struct.ComponentSchema {
     icon: 'file-video';
   };
   attributes: {};
+}
+
+export interface SharedNewdrop extends Struct.ComponentSchema {
+  collectionName: 'components_shared_newdrops';
+  info: {
+    displayName: 'newdrop';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    badgebgcolor: Schema.Attribute.String;
+    bgimage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface SharedOfferhero extends Struct.ComponentSchema {
+  collectionName: 'components_shared_offerheroes';
+  info: {
+    displayName: 'offerhero';
+  };
+  attributes: {
+    bgcolorcode: Schema.Attribute.String;
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    codevaluedata: Schema.Attribute.Component<'shared.codevalue', true>;
+  };
 }
 
 export interface SharedPhilosophyjourneycard extends Struct.ComponentSchema {
@@ -284,6 +363,16 @@ export interface SharedSeo extends Struct.ComponentSchema {
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
     shareImage: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface SharedSimpleImg extends Struct.ComponentSchema {
+  collectionName: 'components_shared_simple_imgs';
+  info: {
+    displayName: 'simple_img';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -484,6 +573,7 @@ declare module '@strapi/strapi' {
       'shared.cardhow': SharedCardhow;
       'shared.cards': SharedCards;
       'shared.cardstroy': SharedCardstroy;
+      'shared.codevalue': SharedCodevalue;
       'shared.collaboratecardjoin': SharedCollaboratecardjoin;
       'shared.collaborateslidercard': SharedCollaborateslidercard;
       'shared.collaboratewelcomecard': SharedCollaboratewelcomecard;
@@ -493,13 +583,18 @@ declare module '@strapi/strapi' {
       'shared.content': SharedContent;
       'shared.detailscard': SharedDetailscard;
       'shared.homewhyartunecard': SharedHomewhyartunecard;
+      'shared.mainheading': SharedMainheading;
+      'shared.mainleftheading': SharedMainleftheading;
       'shared.media': SharedMedia;
+      'shared.newdrop': SharedNewdrop;
+      'shared.offerhero': SharedOfferhero;
       'shared.philosophyjourneycard': SharedPhilosophyjourneycard;
       'shared.philosophymaterialcard': SharedPhilosophymaterialcard;
       'shared.philosophyourecocard': SharedPhilosophyourecocard;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
+      'shared.simple-img': SharedSimpleImg;
       'shared.sizedetailcard': SharedSizedetailcard;
       'shared.sizefaqcard': SharedSizefaqcard;
       'shared.sizeherocard': SharedSizeherocard;

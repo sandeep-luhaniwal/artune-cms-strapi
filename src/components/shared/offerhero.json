@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_offerheroes",
+  "info": {
+    "displayName": "offerhero"
+  },
+  "options": {},
+  "attributes": {
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "bgcolorcode": {
+      "type": "string"
+    },
+    "codevaluedata": {
+      "type": "component",
+      "component": "shared.codevalue",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

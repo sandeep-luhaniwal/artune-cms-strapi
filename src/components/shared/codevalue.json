@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_codevalues",
+  "info": {
+    "displayName": "codevalue"
+  },
+  "options": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "code_value": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "headingcode": {
+      "type": "string"
+    },
+    "headingoff": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

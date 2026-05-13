@@ -991,6 +991,37 @@ export interface ApiArtscalestoryArtscalestory
   };
 }
 
+export interface ApiBlogCategoryBlogCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'blog_categories';
+  info: {
+    displayName: 'BlogCategory';
+    pluralName: 'blog-categories';
+    singularName: 'blog-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blog: Schema.Attribute.Relation<'manyToOne', 'api::blog.blog'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blog-category.blog-category'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
@@ -1002,7 +1033,11 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    blog: Schema.Attribute.Relation<'oneToOne', 'api::blog.blog'>;
+    badge: Schema.Attribute.String;
+    blogcategories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blog-category.blog-category'
+    >;
     content: Schema.Attribute.DynamicZone<['shared.content']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1013,6 +1048,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     publishedDate: Schema.Attribute.Date;
+    read_time: Schema.Attribute.String;
     seoDescription: Schema.Attribute.Text;
     seoTitle: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'title'>;
@@ -1469,6 +1505,37 @@ export interface ApiHomewhyartuneHomewhyartune extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMainheroMainhero extends Struct.SingleTypeSchema {
+  collectionName: 'mainheroes';
+  info: {
+    displayName: 'Mainhero';
+    pluralName: 'mainheroes';
+    singularName: 'mainhero';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'shared.mainleftheading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mainhero.mainhero'
+    > &
+      Schema.Attribute.Private;
+    newdrop: Schema.Attribute.Component<'shared.newdrop', false>;
+    offer: Schema.Attribute.Component<'shared.offerhero', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    simpleimage: Schema.Attribute.Component<'shared.simple-img', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2871,6 +2938,7 @@ declare module '@strapi/strapi' {
       'api::artscalesoution.artscalesoution': ApiArtscalesoutionArtscalesoution;
       'api::artscalespine.artscalespine': ApiArtscalespineArtscalespine;
       'api::artscalestory.artscalestory': ApiArtscalestoryArtscalestory;
+      'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::blog.blog': ApiBlogBlog;
       'api::collaborate-ready.collaborate-ready': ApiCollaborateReadyCollaborateReady;
       'api::collaboratefit.collaboratefit': ApiCollaboratefitCollaboratefit;
@@ -2886,6 +2954,7 @@ declare module '@strapi/strapi' {
       'api::homebgvideo.homebgvideo': ApiHomebgvideoHomebgvideo;
       'api::homethreed.homethreed': ApiHomethreedHomethreed;
       'api::homewhyartune.homewhyartune': ApiHomewhyartuneHomewhyartune;
+      'api::mainhero.mainhero': ApiMainheroMainhero;
       'api::philosophyeco.philosophyeco': ApiPhilosophyecoPhilosophyeco;
       'api::philosophyhero.philosophyhero': ApiPhilosophyheroPhilosophyhero;
       'api::philosophyjourney.philosophyjourney': ApiPhilosophyjourneyPhilosophyjourney;
