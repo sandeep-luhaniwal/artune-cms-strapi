@@ -1,0 +1,53 @@
+{
+  "kind": "singleType",
+  "collectionName": "promotions_heroes",
+  "info": {
+    "singularName": "promotions-hero",
+    "pluralName": "promotions-heroes",
+    "displayName": "PromotionsHero"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "badgebgcolor": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "endtime": {
+      "type": "datetime"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "heading"
+    },
+    "slugmatch": {
+      "type": "string"
+    }
+  }
+}

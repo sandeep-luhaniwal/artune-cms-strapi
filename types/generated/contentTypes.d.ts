@@ -1779,6 +1779,237 @@ export interface ApiPhilosophyvaluePhilosophyvalue
   };
 }
 
+export interface ApiPromotionAssetsCategoryPromotionAssetsCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'promotion_assets_categories';
+  info: {
+    displayName: 'PromotionAssetsCategory';
+    pluralName: 'promotion-assets-categories';
+    singularName: 'promotion-assets-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotion-assets-category.promotion-assets-category'
+    > &
+      Schema.Attribute.Private;
+    promotion_assets_list: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::promotion-assets-list.promotion-assets-list'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPromotionAssetsListPromotionAssetsList
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'promotion_assets_lists';
+  info: {
+    displayName: 'PromotionAssetsList';
+    pluralName: 'promotion-assets-lists';
+    singularName: 'promotion-assets-list';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotion-assets-list.promotion-assets-list'
+    > &
+      Schema.Attribute.Private;
+    price: Schema.Attribute.Integer;
+    promotion_assets_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotion-assets-category.promotion-assets-category'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    saleprice: Schema.Attribute.Integer;
+    slug: Schema.Attribute.UID<'title'>;
+    slugvalue: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPromotionsCategoryPromotionsCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'promotions_categories';
+  info: {
+    displayName: 'PromotionsCategory';
+    pluralName: 'promotions-categories';
+    singularName: 'promotions-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotions-category.promotions-category'
+    > &
+      Schema.Attribute.Private;
+    promotions_sub_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::promotions-sub-category.promotions-sub-category'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPromotionsHeroPromotionsHero
+  extends Struct.SingleTypeSchema {
+  collectionName: 'promotions_heroes';
+  info: {
+    displayName: 'PromotionsHero';
+    pluralName: 'promotions-heroes';
+    singularName: 'promotions-hero';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    badgebgcolor: Schema.Attribute.String;
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    endtime: Schema.Attribute.DateTime;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotions-hero.promotions-hero'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'heading'>;
+    slugmatch: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPromotionsSubCategoryPromotionsSubCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'promotions_sub_categories';
+  info: {
+    displayName: 'PromotionsSubCategory';
+    pluralName: 'promotions-sub-categories';
+    singularName: 'promotions-sub-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotions-sub-category.promotions-sub-category'
+    > &
+      Schema.Attribute.Private;
+    promotions_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::promotions-category.promotions-category'
+    >;
+    promotionscategorydatalist: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::promotionscategorydatalist.promotionscategorydatalist'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPromotionscategorydatalistPromotionscategorydatalist
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'promotionscategorydatalists';
+  info: {
+    displayName: 'Promotionscategorydatalist';
+    pluralName: 'promotionscategorydatalists';
+    singularName: 'promotionscategorydatalist';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    badge_bgcolor: Schema.Attribute.String;
+    badge_one: Schema.Attribute.String;
+    badge_one_bgcolor: Schema.Attribute.String;
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotionscategorydatalist.promotionscategorydatalist'
+    > &
+      Schema.Attribute.Private;
+    price: Schema.Attribute.Integer;
+    promotions_sub_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotions-sub-category.promotions-sub-category'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    slugvlalue: Schema.Attribute.String;
+    stock: Schema.Attribute.Integer;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSizeartSizeart extends Struct.SingleTypeSchema {
   collectionName: 'sizearts';
   info: {
@@ -2962,6 +3193,12 @@ declare module '@strapi/strapi' {
       'api::philosophymaterial.philosophymaterial': ApiPhilosophymaterialPhilosophymaterial;
       'api::philosophyoureco.philosophyoureco': ApiPhilosophyourecoPhilosophyoureco;
       'api::philosophyvalue.philosophyvalue': ApiPhilosophyvaluePhilosophyvalue;
+      'api::promotion-assets-category.promotion-assets-category': ApiPromotionAssetsCategoryPromotionAssetsCategory;
+      'api::promotion-assets-list.promotion-assets-list': ApiPromotionAssetsListPromotionAssetsList;
+      'api::promotions-category.promotions-category': ApiPromotionsCategoryPromotionsCategory;
+      'api::promotions-hero.promotions-hero': ApiPromotionsHeroPromotionsHero;
+      'api::promotions-sub-category.promotions-sub-category': ApiPromotionsSubCategoryPromotionsSubCategory;
+      'api::promotionscategorydatalist.promotionscategorydatalist': ApiPromotionscategorydatalistPromotionscategorydatalist;
       'api::sizeart.sizeart': ApiSizeartSizeart;
       'api::sizecomparison.sizecomparison': ApiSizecomparisonSizecomparison;
       'api::sizedetail.sizedetail': ApiSizedetailSizedetail;

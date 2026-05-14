@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promotions_categories",
+  "info": {
+    "singularName": "promotions-category",
+    "pluralName": "promotions-categories",
+    "displayName": "PromotionsCategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "promotions_sub_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::promotions-sub-category.promotions-sub-category",
+      "mappedBy": "promotions_category"
+    }
+  }
+}

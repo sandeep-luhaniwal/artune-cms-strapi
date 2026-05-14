@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promotion_assets_lists",
+  "info": {
+    "singularName": "promotion-assets-list",
+    "pluralName": "promotion-assets-lists",
+    "displayName": "PromotionAssetsList"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "description": {
+      "type": "text"
+    },
+    "promotion_assets_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::promotion-assets-category.promotion-assets-category",
+      "mappedBy": "promotion_assets_list"
+    },
+    "slugvalue": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "saleprice": {
+      "type": "integer"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

@@ -327,6 +327,15 @@ export interface SharedPhilosophyourecocard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPromotionscategorydatalistdyanmic
+  extends Struct.ComponentSchema {
+  collectionName: 'components_shared_promotionscategorydatalistdyanmics';
+  info: {
+    displayName: 'Promotionscategorydatalistdyanmic';
+  };
+  attributes: {};
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -591,6 +600,7 @@ declare module '@strapi/strapi' {
       'shared.philosophyjourneycard': SharedPhilosophyjourneycard;
       'shared.philosophymaterialcard': SharedPhilosophymaterialcard;
       'shared.philosophyourecocard': SharedPhilosophyourecocard;
+      'shared.promotionscategorydatalistdyanmic': SharedPromotionscategorydatalistdyanmic;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;

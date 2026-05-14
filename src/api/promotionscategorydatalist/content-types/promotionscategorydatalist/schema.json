@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promotionscategorydatalists",
+  "info": {
+    "singularName": "promotionscategorydatalist",
+    "pluralName": "promotionscategorydatalists",
+    "displayName": "Promotionscategorydatalist"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "stock": {
+      "type": "integer"
+    },
+    "promotions_sub_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::promotions-sub-category.promotions-sub-category",
+      "mappedBy": "promotionscategorydatalist"
+    },
+    "slugvlalue": {
+      "type": "string"
+    },
+    "badge_one": {
+      "type": "string"
+    },
+    "badge_one_bgcolor": {
+      "type": "string"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "badge_bgcolor": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    }
+  }
+}
