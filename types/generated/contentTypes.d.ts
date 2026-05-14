@@ -1855,6 +1855,121 @@ export interface ApiPromotionAssetsListPromotionAssetsList
   };
 }
 
+export interface ApiPromotionbundlelistPromotionbundlelist
+  extends Struct.SingleTypeSchema {
+  collectionName: 'promotionbundlelists';
+  info: {
+    displayName: 'Promotionbundlelist';
+    pluralName: 'promotionbundlelists';
+    singularName: 'promotionbundlelist';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotionbundlelist.promotionbundlelist'
+    > &
+      Schema.Attribute.Private;
+    promotionproducts: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotionproduct.promotionproduct'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPromotioncollectionPromotioncollection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'promotioncollections';
+  info: {
+    displayName: 'Promotioncollection';
+    pluralName: 'promotioncollections';
+    singularName: 'promotioncollection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    claimed: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    leftItems: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotioncollection.promotioncollection'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    timer: Schema.Attribute.DateTime;
+    timertitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    totalItems: Schema.Attribute.Integer;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPromotionproductPromotionproduct
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'promotionproducts';
+  info: {
+    displayName: 'Promotionproduct';
+    pluralName: 'promotionproducts';
+    singularName: 'promotionproduct';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotionproduct.promotionproduct'
+    > &
+      Schema.Attribute.Private;
+    price: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    saleprice: Schema.Attribute.Integer;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPromotionsCategoryPromotionsCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'promotions_categories';
@@ -3195,6 +3310,9 @@ declare module '@strapi/strapi' {
       'api::philosophyvalue.philosophyvalue': ApiPhilosophyvaluePhilosophyvalue;
       'api::promotion-assets-category.promotion-assets-category': ApiPromotionAssetsCategoryPromotionAssetsCategory;
       'api::promotion-assets-list.promotion-assets-list': ApiPromotionAssetsListPromotionAssetsList;
+      'api::promotionbundlelist.promotionbundlelist': ApiPromotionbundlelistPromotionbundlelist;
+      'api::promotioncollection.promotioncollection': ApiPromotioncollectionPromotioncollection;
+      'api::promotionproduct.promotionproduct': ApiPromotionproductPromotionproduct;
       'api::promotions-category.promotions-category': ApiPromotionsCategoryPromotionsCategory;
       'api::promotions-hero.promotions-hero': ApiPromotionsHeroPromotionsHero;
       'api::promotions-sub-category.promotions-sub-category': ApiPromotionsSubCategoryPromotionsSubCategory;
