@@ -202,6 +202,16 @@ export interface SharedDetailscard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedGallerybundleslug extends Struct.ComponentSchema {
+  collectionName: 'components_shared_gallerybundleslugs';
+  info: {
+    displayName: 'gallerybundleslug';
+  };
+  attributes: {
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedHomewhyartunecard extends Struct.ComponentSchema {
   collectionName: 'components_shared_homewhyartunecards';
   info: {
@@ -325,6 +335,14 @@ export interface SharedPhilosophyourecocard extends Struct.ComponentSchema {
     img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
+}
+
+export interface SharedProductaddslug extends Struct.ComponentSchema {
+  collectionName: 'components_shared_productaddslugs';
+  info: {
+    displayName: 'productaddslug';
+  };
+  attributes: {};
 }
 
 export interface SharedPromotionscategorydatalistdyanmic
@@ -591,6 +609,7 @@ declare module '@strapi/strapi' {
       'shared.commonwhychoosecard': SharedCommonwhychoosecard;
       'shared.content': SharedContent;
       'shared.detailscard': SharedDetailscard;
+      'shared.gallerybundleslug': SharedGallerybundleslug;
       'shared.homewhyartunecard': SharedHomewhyartunecard;
       'shared.mainheading': SharedMainheading;
       'shared.mainleftheading': SharedMainleftheading;
@@ -600,6 +619,7 @@ declare module '@strapi/strapi' {
       'shared.philosophyjourneycard': SharedPhilosophyjourneycard;
       'shared.philosophymaterialcard': SharedPhilosophymaterialcard;
       'shared.philosophyourecocard': SharedPhilosophyourecocard;
+      'shared.productaddslug': SharedProductaddslug;
       'shared.promotionscategorydatalistdyanmic': SharedPromotionscategorydatalistdyanmic;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

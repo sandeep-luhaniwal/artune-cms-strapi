@@ -1944,14 +1944,12 @@ export interface ApiPromotionproductPromotionproduct
   };
   attributes: {
     button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Blocks;
-    image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
+    gallerybundleslug: Schema.Attribute.DynamicZone<
+      ['shared.gallerybundleslug']
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1959,10 +1957,7 @@ export interface ApiPromotionproductPromotionproduct
       'api::promotionproduct.promotionproduct'
     > &
       Schema.Attribute.Private;
-    price: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    saleprice: Schema.Attribute.Integer;
-    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

@@ -17,30 +17,13 @@
     "description": {
       "type": "blocks"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
-    "price": {
-      "type": "integer"
-    },
-    "saleprice": {
-      "type": "integer"
-    },
     "button": {
       "type": "string"
     },
-    "button_url": {
-      "type": "string"
-    },
-    "image": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+    "gallerybundleslug": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.gallerybundleslug"
       ]
     }
   }
