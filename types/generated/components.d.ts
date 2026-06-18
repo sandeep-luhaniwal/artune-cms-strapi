@@ -202,6 +202,24 @@ export interface SharedDetailscard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFormatcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_formatcards';
+  info: {
+    displayName: 'formatcard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    description_one: Schema.Attribute.Text;
+    iconimage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
 export interface SharedGallerybundleslug extends Struct.ComponentSchema {
   collectionName: 'components_shared_gallerybundleslugs';
   info: {
@@ -609,6 +627,7 @@ declare module '@strapi/strapi' {
       'shared.commonwhychoosecard': SharedCommonwhychoosecard;
       'shared.content': SharedContent;
       'shared.detailscard': SharedDetailscard;
+      'shared.formatcard': SharedFormatcard;
       'shared.gallerybundleslug': SharedGallerybundleslug;
       'shared.homewhyartunecard': SharedHomewhyartunecard;
       'shared.mainheading': SharedMainheading;

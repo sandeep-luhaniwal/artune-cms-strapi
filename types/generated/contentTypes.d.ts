@@ -706,7 +706,7 @@ export interface ApiAboutwhoAboutwho extends Struct.SingleTypeSchema {
 }
 
 export interface ApiArtscalechangespaceArtscalechangespace
-  extends Struct.CollectionTypeSchema {
+  extends Struct.SingleTypeSchema {
   collectionName: 'artscalechangespaces';
   info: {
     displayName: 'Artscalechangespace';
@@ -743,8 +743,7 @@ export interface ApiArtscalechangespaceArtscalechangespace
   };
 }
 
-export interface ApiArtscaleheroArtscalehero
-  extends Struct.CollectionTypeSchema {
+export interface ApiArtscaleheroArtscalehero extends Struct.SingleTypeSchema {
   collectionName: 'artscaleheroes';
   info: {
     displayName: 'Artscalehero';
@@ -782,7 +781,7 @@ export interface ApiArtscaleheroArtscalehero
   };
 }
 
-export interface ApiArtscalehowArtscalehow extends Struct.CollectionTypeSchema {
+export interface ApiArtscalehowArtscalehow extends Struct.SingleTypeSchema {
   collectionName: 'artscalehows';
   info: {
     displayName: 'Artscalehow';
@@ -816,7 +815,7 @@ export interface ApiArtscalehowArtscalehow extends Struct.CollectionTypeSchema {
 }
 
 export interface ApiArtscalepartnerArtscalepartner
-  extends Struct.CollectionTypeSchema {
+  extends Struct.SingleTypeSchema {
   collectionName: 'artscalepartners';
   info: {
     displayName: 'Artscalepartner';
@@ -852,7 +851,7 @@ export interface ApiArtscalepartnerArtscalepartner
 }
 
 export interface ApiArtscalepremiumArtscalepremium
-  extends Struct.CollectionTypeSchema {
+  extends Struct.SingleTypeSchema {
   collectionName: 'artscalepremiums';
   info: {
     displayName: 'Artscalepremium';
@@ -894,7 +893,7 @@ export interface ApiArtscalepremiumArtscalepremium
 }
 
 export interface ApiArtscalesoutionArtscalesoution
-  extends Struct.CollectionTypeSchema {
+  extends Struct.SingleTypeSchema {
   collectionName: 'artscalesoutions';
   info: {
     displayName: 'Artscalesoution';
@@ -923,8 +922,7 @@ export interface ApiArtscalesoutionArtscalesoution
   };
 }
 
-export interface ApiArtscalespineArtscalespine
-  extends Struct.CollectionTypeSchema {
+export interface ApiArtscalespineArtscalespine extends Struct.SingleTypeSchema {
   collectionName: 'artscalespines';
   info: {
     displayName: 'Artscalespine';
@@ -958,8 +956,7 @@ export interface ApiArtscalespineArtscalespine
   };
 }
 
-export interface ApiArtscalestoryArtscalestory
-  extends Struct.CollectionTypeSchema {
+export interface ApiArtscalestoryArtscalestory extends Struct.SingleTypeSchema {
   collectionName: 'artscalestories';
   info: {
     displayName: 'Artscalestory';
@@ -2385,6 +2382,7 @@ export interface ApiSizeformatSizeformat extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    formatcard: Schema.Attribute.DynamicZone<['shared.formatcard']>;
     heading: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

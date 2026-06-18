@@ -19,6 +19,12 @@
     },
     "button_url": {
       "type": "string"
+    },
+    "formatcard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.formatcard"
+      ]
     }
   }
 }
