@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collection_banners",
+  "info": {
+    "singularName": "collection-banner",
+    "pluralName": "collection-banners",
+    "displayName": "collectionBanner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bgimage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "badge": {
+      "type": "string"
+    },
+    "badgebgcolor": {
+      "type": "string"
+    },
+    "bgcolor": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "code_value": {
+      "type": "string"
+    },
+    "start_text": {
+      "type": "string"
+    },
+    "end_text": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "handle": {
+      "type": "uid"
+    },
+    "code_value_bgcolor": {
+      "type": "string"
+    },
+    "headingcolor": {
+      "type": "string"
+    },
+    "buttonbgcolor": {
+      "type": "string"
+    },
+    "buttontextcolor": {
+      "type": "string"
+    },
+    "code_value_textcolor": {
+      "type": "string"
+    },
+    "first_code_textcolor": {
+      "type": "string"
+    },
+    "end_code_textcolor": {
+      "type": "string"
+    }
+  }
+}

@@ -1286,6 +1286,52 @@ export interface ApiCollaboratwelcomeCollaboratwelcome
   };
 }
 
+export interface ApiCollectionBannerCollectionBanner
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'collection_banners';
+  info: {
+    displayName: 'collectionBanner';
+    pluralName: 'collection-banners';
+    singularName: 'collection-banner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    badgebgcolor: Schema.Attribute.String;
+    bgcolor: Schema.Attribute.String;
+    bgimage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    buttonbgcolor: Schema.Attribute.String;
+    buttontextcolor: Schema.Attribute.String;
+    code_value: Schema.Attribute.String;
+    code_value_bgcolor: Schema.Attribute.String;
+    code_value_textcolor: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    end_code_textcolor: Schema.Attribute.String;
+    end_text: Schema.Attribute.String;
+    first_code_textcolor: Schema.Attribute.String;
+    handle: Schema.Attribute.UID;
+    heading: Schema.Attribute.String;
+    headingcolor: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::collection-banner.collection-banner'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    start_text: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCommonofferCommonoffer extends Struct.SingleTypeSchema {
   collectionName: 'commonoffers';
   info: {
@@ -1416,6 +1462,44 @@ export interface ApiHomeartistHomeartist extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomebannerHomebanner extends Struct.SingleTypeSchema {
+  collectionName: 'homebanners';
+  info: {
+    displayName: 'homebanner';
+    pluralName: 'homebanners';
+    singularName: 'homebanner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bgcolor: Schema.Attribute.String;
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    buttonbgcolor: Schema.Attribute.String;
+    code_value: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
+    descriptioncolor: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    headingcolor: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homebanner.homebanner'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    timer: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomebgvideoHomebgvideo extends Struct.SingleTypeSchema {
   collectionName: 'homebgvideos';
   info: {
@@ -1439,6 +1523,42 @@ export interface ApiHomebgvideoHomebgvideo extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::homebgvideo.homebgvideo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomecollectionbannerHomecollectionbanner
+  extends Struct.SingleTypeSchema {
+  collectionName: 'homecollectionbanners';
+  info: {
+    displayName: 'homecollectionbanner';
+    pluralName: 'homecollectionbanners';
+    singularName: 'homecollectionbanner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bgcolor: Schema.Attribute.String;
+    button: Schema.Attribute.String;
+    button_bg: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    buttoncolor: Schema.Attribute.String;
+    code_value_textcolor: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String;
+    headingcolor: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homecollectionbanner.homecollectionbanner'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -3288,11 +3408,14 @@ declare module '@strapi/strapi' {
       'api::collaboratesubmissionreq.collaboratesubmissionreq': ApiCollaboratesubmissionreqCollaboratesubmissionreq;
       'api::collaboratewhyjoin.collaboratewhyjoin': ApiCollaboratewhyjoinCollaboratewhyjoin;
       'api::collaboratwelcome.collaboratwelcome': ApiCollaboratwelcomeCollaboratwelcome;
+      'api::collection-banner.collection-banner': ApiCollectionBannerCollectionBanner;
       'api::commonoffer.commonoffer': ApiCommonofferCommonoffer;
       'api::commonwhychoose.commonwhychoose': ApiCommonwhychooseCommonwhychoose;
       'api::detailscard.detailscard': ApiDetailscardDetailscard;
       'api::homeartist.homeartist': ApiHomeartistHomeartist;
+      'api::homebanner.homebanner': ApiHomebannerHomebanner;
       'api::homebgvideo.homebgvideo': ApiHomebgvideoHomebgvideo;
+      'api::homecollectionbanner.homecollectionbanner': ApiHomecollectionbannerHomecollectionbanner;
       'api::homethreed.homethreed': ApiHomethreedHomethreed;
       'api::homewhyartune.homewhyartune': ApiHomewhyartuneHomewhyartune;
       'api::mainhero.mainhero': ApiMainheroMainhero;

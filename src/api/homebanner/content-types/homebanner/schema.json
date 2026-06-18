@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "homebanners",
+  "info": {
+    "singularName": "homebanner",
+    "pluralName": "homebanners",
+    "displayName": "homebanner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bgcolor": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "code_value": {
+      "type": "string"
+    },
+    "timer": {
+      "type": "datetime"
+    },
+    "descriptioncolor": {
+      "type": "string"
+    },
+    "headingcolor": {
+      "type": "string"
+    },
+    "buttonbgcolor": {
+      "type": "string"
+    }
+  }
+}
