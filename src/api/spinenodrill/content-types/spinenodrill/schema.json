@@ -17,11 +17,18 @@
     "description": {
       "type": "text"
     },
-    "button_one": {
+    "button": {
       "type": "string"
     },
-    "button_one_url": {
-      "type": "string"
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "spinenodrillcard": {
       "type": "dynamiczone",

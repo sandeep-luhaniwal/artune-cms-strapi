@@ -2717,8 +2717,7 @@ export interface ApiSpinenodrillSpinenodrill extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
+    button: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2735,6 +2734,7 @@ export interface ApiSpinenodrillSpinenodrill extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
