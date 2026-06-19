@@ -1897,7 +1897,7 @@ export interface ApiPhilosophyvaluePhilosophyvalue
 }
 
 export interface ApiPromotionAssetsCategoryPromotionAssetsCategory
-  extends Struct.CollectionTypeSchema {
+  extends Struct.SingleTypeSchema {
   collectionName: 'promotion_assets_categories';
   info: {
     displayName: 'PromotionAssetsCategory';
@@ -1920,8 +1920,8 @@ export interface ApiPromotionAssetsCategoryPromotionAssetsCategory
       'api::promotion-assets-category.promotion-assets-category'
     > &
       Schema.Attribute.Private;
-    promotion_assets_list: Schema.Attribute.Relation<
-      'manyToOne',
+    promotion_assets_lists: Schema.Attribute.Relation<
+      'oneToMany',
       'api::promotion-assets-list.promotion-assets-list'
     >;
     publishedAt: Schema.Attribute.DateTime;
@@ -1957,10 +1957,6 @@ export interface ApiPromotionAssetsListPromotionAssetsList
     > &
       Schema.Attribute.Private;
     price: Schema.Attribute.Integer;
-    promotion_assets_categories: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotion-assets-category.promotion-assets-category'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     saleprice: Schema.Attribute.Integer;
     slug: Schema.Attribute.UID<'title'>;

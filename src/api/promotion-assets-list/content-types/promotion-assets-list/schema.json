@@ -21,12 +21,6 @@
     "description": {
       "type": "text"
     },
-    "promotion_assets_categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::promotion-assets-category.promotion-assets-category",
-      "mappedBy": "promotion_assets_list"
-    },
     "slugvalue": {
       "type": "string"
     },
