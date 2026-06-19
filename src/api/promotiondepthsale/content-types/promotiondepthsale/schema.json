@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "promotiondepthsales",
+  "info": {
+    "singularName": "promotiondepthsale",
+    "pluralName": "promotiondepthsales",
+    "displayName": "Promotiondepthsale"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "codevalue": {
+      "type": "string"
+    },
+    "productheading": {
+      "type": "string"
+    },
+    "productdescription": {
+      "type": "string"
+    },
+    "promotion_assets_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::promotion-assets-list.promotion-assets-list"
+    }
+  }
+}

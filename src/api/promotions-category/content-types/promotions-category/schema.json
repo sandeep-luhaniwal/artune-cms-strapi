@@ -18,11 +18,10 @@
       "type": "uid",
       "targetField": "title"
     },
-    "promotions_sub_category": {
+    "promotionscategorydatalists": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::promotions-sub-category.promotions-sub-category",
-      "mappedBy": "promotions_category"
+      "relation": "oneToMany",
+      "target": "api::promotionscategorydatalist.promotionscategorydatalist"
     }
   }
 }

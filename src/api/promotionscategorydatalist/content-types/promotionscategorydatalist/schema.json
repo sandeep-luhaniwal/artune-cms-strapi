@@ -34,12 +34,6 @@
     "stock": {
       "type": "integer"
     },
-    "promotions_sub_categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::promotions-sub-category.promotions-sub-category",
-      "mappedBy": "promotionscategorydatalist"
-    },
     "slugvlalue": {
       "type": "string"
     },

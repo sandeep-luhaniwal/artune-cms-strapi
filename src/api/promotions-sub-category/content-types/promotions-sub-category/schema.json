@@ -1,10 +1,10 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "promotions_sub_categories",
   "info": {
     "singularName": "promotions-sub-category",
     "pluralName": "promotions-sub-categories",
-    "displayName": "PromotionsSubCategory"
+    "displayName": "Promotionfeatureddrop"
   },
   "options": {
     "draftAndPublish": true
@@ -17,18 +17,6 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
-    },
-    "promotions_category": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::promotions-category.promotions-category",
-      "inversedBy": "promotions_sub_category"
-    },
-    "promotionscategorydatalist": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::promotionscategorydatalist.promotionscategorydatalist",
-      "inversedBy": "promotions_sub_categories"
     }
   }
 }

@@ -202,6 +202,14 @@ export interface SharedDetailscard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFlashsaleproduct extends Struct.ComponentSchema {
+  collectionName: 'components_shared_flashsaleproducts';
+  info: {
+    displayName: 'flashsaleproduct';
+  };
+  attributes: {};
+}
+
 export interface SharedFormatcard extends Struct.ComponentSchema {
   collectionName: 'components_shared_formatcards';
   info: {
@@ -627,6 +635,7 @@ declare module '@strapi/strapi' {
       'shared.commonwhychoosecard': SharedCommonwhychoosecard;
       'shared.content': SharedContent;
       'shared.detailscard': SharedDetailscard;
+      'shared.flashsaleproduct': SharedFlashsaleproduct;
       'shared.formatcard': SharedFormatcard;
       'shared.gallerybundleslug': SharedGallerybundleslug;
       'shared.homewhyartunecard': SharedHomewhyartunecard;

@@ -2044,6 +2044,84 @@ export interface ApiPromotioncollectionPromotioncollection
   };
 }
 
+export interface ApiPromotiondepthsalePromotiondepthsale
+  extends Struct.SingleTypeSchema {
+  collectionName: 'promotiondepthsales';
+  info: {
+    displayName: 'Promotiondepthsale';
+    pluralName: 'promotiondepthsales';
+    singularName: 'promotiondepthsale';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    codevalue: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotiondepthsale.promotiondepthsale'
+    > &
+      Schema.Attribute.Private;
+    productdescription: Schema.Attribute.String;
+    productheading: Schema.Attribute.String;
+    promotion_assets_lists: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotion-assets-list.promotion-assets-list'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPromotionflashsalePromotionflashsale
+  extends Struct.SingleTypeSchema {
+  collectionName: 'promotionflashsales';
+  info: {
+    displayName: 'Promotionflashsale';
+    pluralName: 'promotionflashsales';
+    singularName: 'promotionflashsale';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    allproductoff: Schema.Attribute.String;
+    badge: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotionflashsale.promotionflashsale'
+    > &
+      Schema.Attribute.Private;
+    offertext: Schema.Attribute.String;
+    productheading: Schema.Attribute.String;
+    promotion_assets_lists: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotion-assets-list.promotion-assets-list'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    salevalue: Schema.Attribute.String;
+    timer: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPromotionproductPromotionproduct
   extends Struct.CollectionTypeSchema {
   collectionName: 'promotionproducts';
@@ -2099,9 +2177,9 @@ export interface ApiPromotionsCategoryPromotionsCategory
       'api::promotions-category.promotions-category'
     > &
       Schema.Attribute.Private;
-    promotions_sub_category: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::promotions-sub-category.promotions-sub-category'
+    promotionscategorydatalists: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotionscategorydatalist.promotionscategorydatalist'
     >;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
@@ -2151,10 +2229,10 @@ export interface ApiPromotionsHeroPromotionsHero
 }
 
 export interface ApiPromotionsSubCategoryPromotionsSubCategory
-  extends Struct.CollectionTypeSchema {
+  extends Struct.SingleTypeSchema {
   collectionName: 'promotions_sub_categories';
   info: {
-    displayName: 'PromotionsSubCategory';
+    displayName: 'Promotionfeatureddrop';
     pluralName: 'promotions-sub-categories';
     singularName: 'promotions-sub-category';
   };
@@ -2171,14 +2249,6 @@ export interface ApiPromotionsSubCategoryPromotionsSubCategory
       'api::promotions-sub-category.promotions-sub-category'
     > &
       Schema.Attribute.Private;
-    promotions_category: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::promotions-category.promotions-category'
-    >;
-    promotionscategorydatalist: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::promotionscategorydatalist.promotionscategorydatalist'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
@@ -2218,15 +2288,49 @@ export interface ApiPromotionscategorydatalistPromotionscategorydatalist
     > &
       Schema.Attribute.Private;
     price: Schema.Attribute.Integer;
-    promotions_sub_categories: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotions-sub-category.promotions-sub-category'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     slugvlalue: Schema.Attribute.String;
     stock: Schema.Attribute.Integer;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPromotionseasonalsalePromotionseasonalsale
+  extends Struct.SingleTypeSchema {
+  collectionName: 'promotionseasonalsales';
+  info: {
+    displayName: 'promotionseasonalsale';
+    pluralName: 'promotionseasonalsales';
+    singularName: 'promotionseasonalsale';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    codevalue: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotionseasonalsale.promotionseasonalsale'
+    > &
+      Schema.Attribute.Private;
+    productdescription: Schema.Attribute.String;
+    productheading: Schema.Attribute.String;
+    promotion_assets_lists: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotion-assets-list.promotion-assets-list'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -3424,11 +3528,14 @@ declare module '@strapi/strapi' {
       'api::promotion-assets-list.promotion-assets-list': ApiPromotionAssetsListPromotionAssetsList;
       'api::promotionbundlelist.promotionbundlelist': ApiPromotionbundlelistPromotionbundlelist;
       'api::promotioncollection.promotioncollection': ApiPromotioncollectionPromotioncollection;
+      'api::promotiondepthsale.promotiondepthsale': ApiPromotiondepthsalePromotiondepthsale;
+      'api::promotionflashsale.promotionflashsale': ApiPromotionflashsalePromotionflashsale;
       'api::promotionproduct.promotionproduct': ApiPromotionproductPromotionproduct;
       'api::promotions-category.promotions-category': ApiPromotionsCategoryPromotionsCategory;
       'api::promotions-hero.promotions-hero': ApiPromotionsHeroPromotionsHero;
       'api::promotions-sub-category.promotions-sub-category': ApiPromotionsSubCategoryPromotionsSubCategory;
       'api::promotionscategorydatalist.promotionscategorydatalist': ApiPromotionscategorydatalistPromotionscategorydatalist;
+      'api::promotionseasonalsale.promotionseasonalsale': ApiPromotionseasonalsalePromotionseasonalsale;
       'api::sizeart.sizeart': ApiSizeartSizeart;
       'api::sizecomparison.sizecomparison': ApiSizecomparisonSizecomparison;
       'api::sizedetail.sizedetail': ApiSizedetailSizedetail;
