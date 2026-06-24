@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_badgevalues",
+  "info": {
+    "displayName": "badgevalue"
+  },
+  "options": {},
+  "attributes": {
+    "badgevalue": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

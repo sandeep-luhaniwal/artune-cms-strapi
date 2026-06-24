@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "art_scale_consultation_submissions",
+  "info": {
+    "singularName": "art-scale-consultation-submission",
+    "pluralName": "art-scale-consultation-submissions",
+    "displayName": "art-scale-consultation-submission"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "formdata": {
+      "type": "json"
+    }
+  }
+}

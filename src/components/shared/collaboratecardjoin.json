@@ -23,6 +23,9 @@
         "videos",
         "audios"
       ]
+    },
+    "button_url": {
+      "type": "string"
     }
   },
   "config": {}

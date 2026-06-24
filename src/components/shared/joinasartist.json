@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_joinasartists",
+  "info": {
+    "displayName": "joinasartist"
+  },
+  "options": {},
+  "attributes": {
+    "input": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

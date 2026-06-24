@@ -57,6 +57,12 @@
     },
     "price": {
       "type": "integer"
+    },
+    "saleprice": {
+      "type": "integer"
+    },
+    "buttonclass": {
+      "type": "string"
     }
   }
 }

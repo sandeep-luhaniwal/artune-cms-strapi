@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "postgdprfroms",
+  "info": {
+    "singularName": "postgdprfrom",
+    "pluralName": "postgdprfroms",
+    "displayName": "postgdprform"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "checkbox": {
+      "type": "boolean"
+    },
+    "checkboxdescrpition": {
+      "type": "text"
+    },
+    "postgdprform": {
+      "type": "dynamiczone",
+      "components": [
+        "input.joinasartistdata"
+      ]
+    }
+  }
+}

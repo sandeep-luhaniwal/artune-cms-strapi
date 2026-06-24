@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_input_joinasartistdata",
+  "info": {
+    "displayName": "joinasartistdata"
+  },
+  "options": {},
+  "attributes": {
+    "input": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "help_contact_submissions",
+  "info": {
+    "singularName": "help-contact-submission",
+    "pluralName": "help-contact-submissions",
+    "displayName": "help-contact-submission"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "formdata": {
+      "type": "json"
+    }
+  }
+}

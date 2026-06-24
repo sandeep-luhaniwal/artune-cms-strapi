@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface InputJoinasartistdata extends Struct.ComponentSchema {
+  collectionName: 'components_input_joinasartistdata';
+  info: {
+    displayName: 'joinasartistdata';
+  };
+  attributes: {
+    input: Schema.Attribute.String;
+    type: Schema.Attribute.String;
+  };
+}
+
 export interface SharedAboutartunecard extends Struct.ComponentSchema {
   collectionName: 'components_shared_aboutartunecards';
   info: {
@@ -48,6 +59,16 @@ export interface SharedAboutstandcard extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedBadgevalue extends Struct.ComponentSchema {
+  collectionName: 'components_shared_badgevalues';
+  info: {
+    displayName: 'badgevalue';
+  };
+  attributes: {
+    badgevalue: Schema.Attribute.String;
   };
 }
 
@@ -109,6 +130,7 @@ export interface SharedCollaboratecardjoin extends Struct.ComponentSchema {
   };
   attributes: {
     button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
@@ -247,6 +269,25 @@ export interface SharedHomewhyartunecard extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedJoinartist extends Struct.ComponentSchema {
+  collectionName: 'components_shared_joinartists';
+  info: {
+    displayName: 'joinartist';
+  };
+  attributes: {};
+}
+
+export interface SharedJoinasartist extends Struct.ComponentSchema {
+  collectionName: 'components_shared_joinasartists';
+  info: {
+    displayName: 'joinasartist';
+  };
+  attributes: {
+    input: Schema.Attribute.String;
+    type: Schema.Attribute.String;
   };
 }
 
@@ -425,6 +466,9 @@ export interface SharedSimpleImg extends Struct.ComponentSchema {
     displayName: 'simple_img';
   };
   attributes: {
+    button: Schema.Attribute.String;
+    button_url: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
@@ -619,10 +663,12 @@ export interface SharedTitle extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'input.joinasartistdata': InputJoinasartistdata;
       'shared.aboutartunecard': SharedAboutartunecard;
       'shared.aboutideacard': SharedAboutideacard;
       'shared.aboutourstorycard': SharedAboutourstorycard;
       'shared.aboutstandcard': SharedAboutstandcard;
+      'shared.badgevalue': SharedBadgevalue;
       'shared.cardhow': SharedCardhow;
       'shared.cards': SharedCards;
       'shared.cardstroy': SharedCardstroy;
@@ -639,6 +685,8 @@ declare module '@strapi/strapi' {
       'shared.formatcard': SharedFormatcard;
       'shared.gallerybundleslug': SharedGallerybundleslug;
       'shared.homewhyartunecard': SharedHomewhyartunecard;
+      'shared.joinartist': SharedJoinartist;
+      'shared.joinasartist': SharedJoinasartist;
       'shared.mainheading': SharedMainheading;
       'shared.mainleftheading': SharedMainleftheading;
       'shared.media': SharedMedia;

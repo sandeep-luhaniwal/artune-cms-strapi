@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gdpr_sumbmissions",
+  "info": {
+    "singularName": "gdpr-sumbmission",
+    "pluralName": "gdpr-sumbmissions",
+    "displayName": "gdpr-submission"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "formdata": {
+      "type": "json"
+    }
+  }
+}

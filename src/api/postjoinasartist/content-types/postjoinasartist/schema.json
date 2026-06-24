@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "postjoinasartists",
+  "info": {
+    "singularName": "postjoinasartist",
+    "pluralName": "postjoinasartists",
+    "displayName": "postjoinasartist"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "joinasartistdata": {
+      "type": "dynamiczone",
+      "components": [
+        "input.joinasartistdata"
+      ]
+    }
+  }
+}

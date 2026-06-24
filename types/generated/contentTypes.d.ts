@@ -705,6 +705,127 @@ export interface ApiAboutwhoAboutwho extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAllartistsdatalistAllartistsdatalist
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'allartistsdatalists';
+  info: {
+    displayName: 'allartistsdatalist';
+    pluralName: 'allartistsdatalists';
+    singularName: 'allartistsdatalist';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    badgevalue: Schema.Attribute.DynamicZone<['shared.badgevalue']>;
+    bgimage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::allartistsdatalist.allartistsdatalist'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    profile: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiArtScaleConsultationSubmissionArtScaleConsultationSubmission
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'art_scale_consultation_submissions';
+  info: {
+    displayName: 'art-scale-consultation-submission';
+    pluralName: 'art-scale-consultation-submissions';
+    singularName: 'art-scale-consultation-submission';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    formdata: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::art-scale-consultation-submission.art-scale-consultation-submission'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiArtScaleQuoteSubmissionArtScaleQuoteSubmission
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'art_scale_quote_submissions';
+  info: {
+    displayName: 'art-scale-quote-submission';
+    pluralName: 'art-scale-quote-submissions';
+    singularName: 'art-scale-quote-submission';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    formdata: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::art-scale-quote-submission.art-scale-quote-submission'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiArtistSubmissionArtistSubmission
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'artist_submissions';
+  info: {
+    displayName: 'artist-submission';
+    pluralName: 'artist-submissions';
+    singularName: 'artist-submission';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    formData: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::artist-submission.artist-submission'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiArtscalechangespaceArtscalechangespace
   extends Struct.SingleTypeSchema {
   collectionName: 'artscalechangespaces';
@@ -1423,6 +1544,64 @@ export interface ApiDetailscardDetailscard extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiGdprSumbmissionGdprSumbmission
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'gdpr_sumbmissions';
+  info: {
+    displayName: 'gdpr-submission';
+    pluralName: 'gdpr-sumbmissions';
+    singularName: 'gdpr-sumbmission';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    formdata: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::gdpr-sumbmission.gdpr-sumbmission'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHelpContactSubmissionHelpContactSubmission
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'help_contact_submissions';
+  info: {
+    displayName: 'help-contact-submission';
+    pluralName: 'help-contact-submissions';
+    singularName: 'help-contact-submission';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    formdata: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::help-contact-submission.help-contact-submission'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomeartistHomeartist extends Struct.SingleTypeSchema {
   collectionName: 'homeartists';
   info: {
@@ -1896,6 +2075,173 @@ export interface ApiPhilosophyvaluePhilosophyvalue
   };
 }
 
+export interface ApiPostartscaleconsultationformPostartscaleconsultationform
+  extends Struct.SingleTypeSchema {
+  collectionName: 'postartscaleconsultationforms';
+  info: {
+    displayName: 'postartscaleconsultationform';
+    pluralName: 'postartscaleconsultationforms';
+    singularName: 'postartscaleconsultationform';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::postartscaleconsultationform.postartscaleconsultationform'
+    > &
+      Schema.Attribute.Private;
+    postartscaleconsultationform: Schema.Attribute.DynamicZone<
+      ['input.joinasartistdata']
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPostartscalequoteformPostartscalequoteform
+  extends Struct.SingleTypeSchema {
+  collectionName: 'postartscalequoteforms';
+  info: {
+    displayName: 'postartscalequoteform';
+    pluralName: 'postartscalequoteforms';
+    singularName: 'postartscalequoteform';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::postartscalequoteform.postartscalequoteform'
+    > &
+      Schema.Attribute.Private;
+    postartscalequoteform: Schema.Attribute.DynamicZone<
+      ['input.joinasartistdata']
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPostgdprfromPostgdprfrom extends Struct.SingleTypeSchema {
+  collectionName: 'postgdprfroms';
+  info: {
+    displayName: 'postgdprform';
+    pluralName: 'postgdprfroms';
+    singularName: 'postgdprfrom';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    checkbox: Schema.Attribute.Boolean;
+    checkboxdescrpition: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::postgdprfrom.postgdprfrom'
+    > &
+      Schema.Attribute.Private;
+    postgdprform: Schema.Attribute.DynamicZone<['input.joinasartistdata']>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPosthelpcontactformPosthelpcontactform
+  extends Struct.SingleTypeSchema {
+  collectionName: 'posthelpcontactforms';
+  info: {
+    displayName: 'posthelpcontactform';
+    pluralName: 'posthelpcontactforms';
+    singularName: 'posthelpcontactform';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::posthelpcontactform.posthelpcontactform'
+    > &
+      Schema.Attribute.Private;
+    posthelpcontactform: Schema.Attribute.DynamicZone<
+      ['input.joinasartistdata']
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPostjoinasartistPostjoinasartist
+  extends Struct.SingleTypeSchema {
+  collectionName: 'postjoinasartists';
+  info: {
+    displayName: 'postjoinasartist';
+    pluralName: 'postjoinasartists';
+    singularName: 'postjoinasartist';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    joinasartistdata: Schema.Attribute.DynamicZone<['input.joinasartistdata']>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::postjoinasartist.postjoinasartist'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPromotionAssetsCategoryPromotionAssetsCategory
   extends Struct.SingleTypeSchema {
   collectionName: 'promotion_assets_categories';
@@ -2276,6 +2622,7 @@ export interface ApiPromotionscategorydatalistPromotionscategorydatalist
     badge_one_bgcolor: Schema.Attribute.String;
     button: Schema.Attribute.String;
     button_url: Schema.Attribute.String;
+    buttonclass: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2289,6 +2636,7 @@ export interface ApiPromotionscategorydatalistPromotionscategorydatalist
       Schema.Attribute.Private;
     price: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
+    saleprice: Schema.Attribute.Integer;
     slug: Schema.Attribute.UID<'title'>;
     slugvlalue: Schema.Attribute.String;
     stock: Schema.Attribute.Integer;
@@ -3489,6 +3837,10 @@ declare module '@strapi/strapi' {
       'api::aboutready.aboutready': ApiAboutreadyAboutready;
       'api::aboutstand.aboutstand': ApiAboutstandAboutstand;
       'api::aboutwho.aboutwho': ApiAboutwhoAboutwho;
+      'api::allartistsdatalist.allartistsdatalist': ApiAllartistsdatalistAllartistsdatalist;
+      'api::art-scale-consultation-submission.art-scale-consultation-submission': ApiArtScaleConsultationSubmissionArtScaleConsultationSubmission;
+      'api::art-scale-quote-submission.art-scale-quote-submission': ApiArtScaleQuoteSubmissionArtScaleQuoteSubmission;
+      'api::artist-submission.artist-submission': ApiArtistSubmissionArtistSubmission;
       'api::artscalechangespace.artscalechangespace': ApiArtscalechangespaceArtscalechangespace;
       'api::artscalehero.artscalehero': ApiArtscaleheroArtscalehero;
       'api::artscalehow.artscalehow': ApiArtscalehowArtscalehow;
@@ -3510,6 +3862,8 @@ declare module '@strapi/strapi' {
       'api::commonoffer.commonoffer': ApiCommonofferCommonoffer;
       'api::commonwhychoose.commonwhychoose': ApiCommonwhychooseCommonwhychoose;
       'api::detailscard.detailscard': ApiDetailscardDetailscard;
+      'api::gdpr-sumbmission.gdpr-sumbmission': ApiGdprSumbmissionGdprSumbmission;
+      'api::help-contact-submission.help-contact-submission': ApiHelpContactSubmissionHelpContactSubmission;
       'api::homeartist.homeartist': ApiHomeartistHomeartist;
       'api::homebanner.homebanner': ApiHomebannerHomebanner;
       'api::homebgvideo.homebgvideo': ApiHomebgvideoHomebgvideo;
@@ -3524,6 +3878,11 @@ declare module '@strapi/strapi' {
       'api::philosophymaterial.philosophymaterial': ApiPhilosophymaterialPhilosophymaterial;
       'api::philosophyoureco.philosophyoureco': ApiPhilosophyourecoPhilosophyoureco;
       'api::philosophyvalue.philosophyvalue': ApiPhilosophyvaluePhilosophyvalue;
+      'api::postartscaleconsultationform.postartscaleconsultationform': ApiPostartscaleconsultationformPostartscaleconsultationform;
+      'api::postartscalequoteform.postartscalequoteform': ApiPostartscalequoteformPostartscalequoteform;
+      'api::postgdprfrom.postgdprfrom': ApiPostgdprfromPostgdprfrom;
+      'api::posthelpcontactform.posthelpcontactform': ApiPosthelpcontactformPosthelpcontactform;
+      'api::postjoinasartist.postjoinasartist': ApiPostjoinasartistPostjoinasartist;
       'api::promotion-assets-category.promotion-assets-category': ApiPromotionAssetsCategoryPromotionAssetsCategory;
       'api::promotion-assets-list.promotion-assets-list': ApiPromotionAssetsListPromotionAssetsList;
       'api::promotionbundlelist.promotionbundlelist': ApiPromotionbundlelistPromotionbundlelist;

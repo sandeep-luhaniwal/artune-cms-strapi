@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "postartscaleconsultationforms",
+  "info": {
+    "singularName": "postartscaleconsultationform",
+    "pluralName": "postartscaleconsultationforms",
+    "displayName": "postartscaleconsultationform"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "postartscaleconsultationform": {
+      "type": "dynamiczone",
+      "components": [
+        "input.joinasartistdata"
+      ]
+    }
+  }
+}

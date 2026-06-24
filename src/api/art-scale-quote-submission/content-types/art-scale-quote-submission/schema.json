@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "art_scale_quote_submissions",
+  "info": {
+    "singularName": "art-scale-quote-submission",
+    "pluralName": "art-scale-quote-submissions",
+    "displayName": "art-scale-quote-submission"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "formdata": {
+      "type": "json"
+    }
+  }
+}

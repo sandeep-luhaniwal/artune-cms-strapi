@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "posthelpcontactforms",
+  "info": {
+    "singularName": "posthelpcontactform",
+    "pluralName": "posthelpcontactforms",
+    "displayName": "posthelpcontactform"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string"
+    },
+    "posthelpcontactform": {
+      "type": "dynamiczone",
+      "components": [
+        "input.joinasartistdata"
+      ]
+    }
+  }
+}

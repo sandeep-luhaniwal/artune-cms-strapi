@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artist_submissions",
+  "info": {
+    "singularName": "artist-submission",
+    "pluralName": "artist-submissions",
+    "displayName": "artist-submission"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "formData": {
+      "type": "json"
+    }
+  }
+}

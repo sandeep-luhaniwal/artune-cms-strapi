@@ -14,6 +14,15 @@
         "videos",
         "audios"
       ]
+    },
+    "heading": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
     }
   },
   "config": {}
