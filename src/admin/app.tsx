@@ -19,6 +19,12 @@ const COLLECTION_MAPPING = {
   'api::help-contact-submission.help-contact-submission': {
     endpoint: '/api/help-contact-submissions/export',
   },
+  'api::crate-your-design-submission.crate-your-design-submission': {
+    endpoint: '/api/crate-your-design-submissions/export',
+  },
+  'api::downloadfullguidpdfclient.downloadfullguidpdfclient': {
+    endpoint: '/api/downloadfullguidpdfclients/export',
+  },
 };
 
 const ExportExcelButton = () => {

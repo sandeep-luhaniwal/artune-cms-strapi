@@ -1516,6 +1516,35 @@ export interface ApiCommonwhychooseCommonwhychoose
   };
 }
 
+export interface ApiCrateYourDesignSubmissionCrateYourDesignSubmission
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'crate_your_design_submissions';
+  info: {
+    displayName: 'create-your-design-submission';
+    pluralName: 'crate-your-design-submissions';
+    singularName: 'crate-your-design-submission';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    formdata: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::crate-your-design-submission.crate-your-design-submission'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDetailscardDetailscard extends Struct.SingleTypeSchema {
   collectionName: 'detailscards';
   info: {
@@ -1541,6 +1570,36 @@ export interface ApiDetailscardDetailscard extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDownloadfullguidpdfclientDownloadfullguidpdfclient
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'downloadfullguidpdfclients';
+  info: {
+    displayName: 'downloadfullguidpdfclient';
+    pluralName: 'downloadfullguidpdfclients';
+    singularName: 'downloadfullguidpdfclient';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::downloadfullguidpdfclient.downloadfullguidpdfclient'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    userform: Schema.Attribute.String;
   };
 }
 
@@ -2133,6 +2192,40 @@ export interface ApiPostartscalequoteformPostartscalequoteform
     > &
       Schema.Attribute.Private;
     postartscalequoteform: Schema.Attribute.DynamicZone<
+      ['input.joinasartistdata']
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPostcreateyourdesignPostcreateyourdesign
+  extends Struct.SingleTypeSchema {
+  collectionName: 'postcreateyourdesigns';
+  info: {
+    displayName: 'postcreateyourdesign';
+    pluralName: 'postcreateyourdesigns';
+    singularName: 'postcreateyourdesign';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::postcreateyourdesign.postcreateyourdesign'
+    > &
+      Schema.Attribute.Private;
+    Postcreateyourdesign: Schema.Attribute.DynamicZone<
       ['input.joinasartistdata']
     >;
     publishedAt: Schema.Attribute.DateTime;
@@ -3269,8 +3362,8 @@ export interface ApiSpinestepSpinestep extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    download_button: Schema.Attribute.String;
-    download_button_url: Schema.Attribute.String;
+    downlaodspdf_button: Schema.Attribute.Media<'files'>;
+    downlaodspdf_button_url: Schema.Attribute.Media<'files' | 'audios'>;
     heading: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -3316,6 +3409,35 @@ export interface ApiSpinethreeminSpinethreemin extends Struct.SingleTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ApiSubscribeclientSubscribeclient
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'subscribeclients';
+  info: {
+    displayName: 'Subscribeclient';
+    pluralName: 'subscribeclients';
+    singularName: 'subscribeclient';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::subscribeclient.subscribeclient'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    UserGmail: Schema.Attribute.String;
   };
 }
 
@@ -3861,7 +3983,9 @@ declare module '@strapi/strapi' {
       'api::collection-banner.collection-banner': ApiCollectionBannerCollectionBanner;
       'api::commonoffer.commonoffer': ApiCommonofferCommonoffer;
       'api::commonwhychoose.commonwhychoose': ApiCommonwhychooseCommonwhychoose;
+      'api::crate-your-design-submission.crate-your-design-submission': ApiCrateYourDesignSubmissionCrateYourDesignSubmission;
       'api::detailscard.detailscard': ApiDetailscardDetailscard;
+      'api::downloadfullguidpdfclient.downloadfullguidpdfclient': ApiDownloadfullguidpdfclientDownloadfullguidpdfclient;
       'api::gdpr-sumbmission.gdpr-sumbmission': ApiGdprSumbmissionGdprSumbmission;
       'api::help-contact-submission.help-contact-submission': ApiHelpContactSubmissionHelpContactSubmission;
       'api::homeartist.homeartist': ApiHomeartistHomeartist;
@@ -3880,6 +4004,7 @@ declare module '@strapi/strapi' {
       'api::philosophyvalue.philosophyvalue': ApiPhilosophyvaluePhilosophyvalue;
       'api::postartscaleconsultationform.postartscaleconsultationform': ApiPostartscaleconsultationformPostartscaleconsultationform;
       'api::postartscalequoteform.postartscalequoteform': ApiPostartscalequoteformPostartscalequoteform;
+      'api::postcreateyourdesign.postcreateyourdesign': ApiPostcreateyourdesignPostcreateyourdesign;
       'api::postgdprfrom.postgdprfrom': ApiPostgdprfromPostgdprfrom;
       'api::posthelpcontactform.posthelpcontactform': ApiPosthelpcontactformPosthelpcontactform;
       'api::postjoinasartist.postjoinasartist': ApiPostjoinasartistPostjoinasartist;
@@ -3914,6 +4039,7 @@ declare module '@strapi/strapi' {
       'api::spineslider.spineslider': ApiSpinesliderSpineslider;
       'api::spinestep.spinestep': ApiSpinestepSpinestep;
       'api::spinethreemin.spinethreemin': ApiSpinethreeminSpinethreemin;
+      'api::subscribeclient.subscribeclient': ApiSubscribeclientSubscribeclient;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

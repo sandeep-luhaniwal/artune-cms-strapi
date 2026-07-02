@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subscribeclients",
+  "info": {
+    "singularName": "subscribeclient",
+    "pluralName": "subscribeclients",
+    "displayName": "Subscribeclient"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "UserGmail": {
+      "type": "string"
+    }
+  }
+}

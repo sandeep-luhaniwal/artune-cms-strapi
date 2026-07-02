@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "postcreateyourdesigns",
+  "info": {
+    "singularName": "postcreateyourdesign",
+    "pluralName": "postcreateyourdesigns",
+    "displayName": "postcreateyourdesign"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "Postcreateyourdesign": {
+      "type": "dynamiczone",
+      "components": [
+        "input.joinasartistdata"
+      ]
+    }
+  }
+}

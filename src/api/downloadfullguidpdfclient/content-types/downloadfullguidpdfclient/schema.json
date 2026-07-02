@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "downloadfullguidpdfclients",
+  "info": {
+    "singularName": "downloadfullguidpdfclient",
+    "pluralName": "downloadfullguidpdfclients",
+    "displayName": "downloadfullguidpdfclient"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "string"
+    },
+    "userform": {
+      "type": "string"
+    }
+  }
+}

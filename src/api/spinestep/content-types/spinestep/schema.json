@@ -20,12 +20,6 @@
     "description": {
       "type": "text"
     },
-    "download_button": {
-      "type": "string"
-    },
-    "download_button_url": {
-      "type": "string"
-    },
     "button": {
       "type": "string"
     },
@@ -45,6 +39,21 @@
         "images",
         "files",
         "videos",
+        "audios"
+      ]
+    },
+    "downlaodspdf_button": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "downlaodspdf_button_url": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
         "audios"
       ]
     }

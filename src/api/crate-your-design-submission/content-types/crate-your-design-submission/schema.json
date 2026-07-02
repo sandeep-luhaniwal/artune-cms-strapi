@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "crate_your_design_submissions",
+  "info": {
+    "singularName": "crate-your-design-submission",
+    "pluralName": "crate-your-design-submissions",
+    "displayName": "create-your-design-submission"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "formdata": {
+      "type": "json"
+    }
+  }
+}
