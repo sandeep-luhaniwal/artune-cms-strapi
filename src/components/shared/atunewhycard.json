@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_atunewhycards",
+  "info": {
+    "displayName": "Atunewhycard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

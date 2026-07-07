@@ -62,6 +62,18 @@ export interface SharedAboutstandcard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedAtunewhycard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_atunewhycards';
+  info: {
+    displayName: 'Atunewhycard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedBadgevalue extends Struct.ComponentSchema {
   collectionName: 'components_shared_badgevalues';
   info: {
@@ -668,6 +680,7 @@ declare module '@strapi/strapi' {
       'shared.aboutideacard': SharedAboutideacard;
       'shared.aboutourstorycard': SharedAboutourstorycard;
       'shared.aboutstandcard': SharedAboutstandcard;
+      'shared.atunewhycard': SharedAtunewhycard;
       'shared.badgevalue': SharedBadgevalue;
       'shared.cardhow': SharedCardhow;
       'shared.cards': SharedCards;

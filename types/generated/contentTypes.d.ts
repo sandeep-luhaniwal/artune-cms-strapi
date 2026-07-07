@@ -1845,6 +1845,7 @@ export interface ApiHomewhyartuneHomewhyartune extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    bgimage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2772,6 +2773,35 @@ export interface ApiPromotionseasonalsalePromotionseasonalsale
       'api::promotion-assets-list.promotion-assets-list'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPromotionvipPromotionvip extends Struct.SingleTypeSchema {
+  collectionName: 'promotionvips';
+  info: {
+    displayName: 'Promotionvip';
+    pluralName: 'promotionvips';
+    singularName: 'promotionvip';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promotionvip.promotionvip'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -4020,6 +4050,7 @@ declare module '@strapi/strapi' {
       'api::promotions-sub-category.promotions-sub-category': ApiPromotionsSubCategoryPromotionsSubCategory;
       'api::promotionscategorydatalist.promotionscategorydatalist': ApiPromotionscategorydatalistPromotionscategorydatalist;
       'api::promotionseasonalsale.promotionseasonalsale': ApiPromotionseasonalsalePromotionseasonalsale;
+      'api::promotionvip.promotionvip': ApiPromotionvipPromotionvip;
       'api::sizeart.sizeart': ApiSizeartSizeart;
       'api::sizecomparison.sizecomparison': ApiSizecomparisonSizecomparison;
       'api::sizedetail.sizedetail': ApiSizedetailSizedetail;
