@@ -2808,6 +2808,43 @@ export interface ApiPromotionvipPromotionvip extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiSeoallpagecreateSeoallpagecreate
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'seoallpagecreates';
+  info: {
+    displayName: 'seoallpagecreate';
+    pluralName: 'seoallpagecreates';
+    singularName: 'seoallpagecreate';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::seoallpagecreate.seoallpagecreate'
+    > &
+      Schema.Attribute.Private;
+    meta_title: Schema.Attribute.String;
+    pageurl: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    seodetails: Schema.Attribute.DynamicZone<['shared.seodetails']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSizeartSizeart extends Struct.SingleTypeSchema {
   collectionName: 'sizearts';
   info: {
@@ -4051,6 +4088,7 @@ declare module '@strapi/strapi' {
       'api::promotionscategorydatalist.promotionscategorydatalist': ApiPromotionscategorydatalistPromotionscategorydatalist;
       'api::promotionseasonalsale.promotionseasonalsale': ApiPromotionseasonalsalePromotionseasonalsale;
       'api::promotionvip.promotionvip': ApiPromotionvipPromotionvip;
+      'api::seoallpagecreate.seoallpagecreate': ApiSeoallpagecreateSeoallpagecreate;
       'api::sizeart.sizeart': ApiSizeartSizeart;
       'api::sizecomparison.sizecomparison': ApiSizecomparisonSizecomparison;
       'api::sizedetail.sizedetail': ApiSizedetailSizedetail;

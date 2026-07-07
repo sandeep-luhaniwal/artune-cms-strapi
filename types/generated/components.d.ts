@@ -472,6 +472,17 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSeodetails extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seodetails';
+  info: {
+    displayName: 'seodetails';
+  };
+  attributes: {
+    key: Schema.Attribute.String;
+    value: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedSimpleImg extends Struct.ComponentSchema {
   collectionName: 'components_shared_simple_imgs';
   info: {
@@ -713,6 +724,7 @@ declare module '@strapi/strapi' {
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
+      'shared.seodetails': SharedSeodetails;
       'shared.simple-img': SharedSimpleImg;
       'shared.sizedetailcard': SharedSizedetailcard;
       'shared.sizefaqcard': SharedSizefaqcard;

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seoallpagecreates",
+  "info": {
+    "singularName": "seoallpagecreate",
+    "pluralName": "seoallpagecreates",
+    "displayName": "seoallpagecreate"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "meta_title": {
+      "type": "string"
+    },
+    "pageurl": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "seodetails": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.seodetails"
+      ]
+    }
+  }
+}
