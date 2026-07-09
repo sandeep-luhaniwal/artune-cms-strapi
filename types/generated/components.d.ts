@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface InputAllpostapidata extends Struct.ComponentSchema {
+  collectionName: 'components_input_allpostapidata';
+  info: {
+    displayName: 'allpostapidata';
+  };
+  attributes: {
+    input: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
 export interface InputJoinasartistdata extends Struct.ComponentSchema {
   collectionName: 'components_input_joinasartistdata';
   info: {
@@ -8,6 +19,19 @@ export interface InputJoinasartistdata extends Struct.ComponentSchema {
   attributes: {
     input: Schema.Attribute.String;
     type: Schema.Attribute.String;
+  };
+}
+
+export interface InputUploadimgpdf extends Struct.ComponentSchema {
+  collectionName: 'components_input_uploadimgpdfs';
+  info: {
+    displayName: 'uploadimgpdf';
+  };
+  attributes: {
+    upload: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
   };
 }
 
@@ -686,7 +710,9 @@ export interface SharedTitle extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'input.allpostapidata': InputAllpostapidata;
       'input.joinasartistdata': InputJoinasartistdata;
+      'input.uploadimgpdf': InputUploadimgpdf;
       'shared.aboutartunecard': SharedAboutartunecard;
       'shared.aboutideacard': SharedAboutideacard;
       'shared.aboutourstorycard': SharedAboutourstorycard;

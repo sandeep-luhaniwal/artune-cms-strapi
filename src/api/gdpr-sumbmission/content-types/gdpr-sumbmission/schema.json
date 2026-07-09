@@ -13,6 +13,22 @@
   "attributes": {
     "formdata": {
       "type": "json"
+    },
+    "allpostapidata": {
+      "type": "dynamiczone",
+      "components": [
+        "input.allpostapidata"
+      ]
+    },
+    "upload": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

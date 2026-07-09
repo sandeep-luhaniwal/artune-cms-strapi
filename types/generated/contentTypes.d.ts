@@ -751,6 +751,7 @@ export interface ApiArtScaleConsultationSubmissionArtScaleConsultationSubmission
     draftAndPublish: true;
   };
   attributes: {
+    allpostapidata: Schema.Attribute.DynamicZone<['input.allpostapidata']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -765,6 +766,10 @@ export interface ApiArtScaleConsultationSubmissionArtScaleConsultationSubmission
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    upload: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
   };
 }
 
@@ -780,6 +785,7 @@ export interface ApiArtScaleQuoteSubmissionArtScaleQuoteSubmission
     draftAndPublish: true;
   };
   attributes: {
+    allpostapidata: Schema.Attribute.DynamicZone<['input.allpostapidata']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -794,6 +800,10 @@ export interface ApiArtScaleQuoteSubmissionArtScaleQuoteSubmission
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    upload: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
   };
 }
 
@@ -809,6 +819,7 @@ export interface ApiArtistSubmissionArtistSubmission
     draftAndPublish: false;
   };
   attributes: {
+    allpostapidata: Schema.Attribute.DynamicZone<['input.allpostapidata']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -823,6 +834,10 @@ export interface ApiArtistSubmissionArtistSubmission
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    upload: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
   };
 }
 
@@ -1528,9 +1543,11 @@ export interface ApiCrateYourDesignSubmissionCrateYourDesignSubmission
     draftAndPublish: true;
   };
   attributes: {
+    allpostapidata: Schema.Attribute.DynamicZone<['input.allpostapidata']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    email: Schema.Attribute.String;
     formdata: Schema.Attribute.JSON;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1538,10 +1555,15 @@ export interface ApiCrateYourDesignSubmissionCrateYourDesignSubmission
       'api::crate-your-design-submission.crate-your-design-submission'
     > &
       Schema.Attribute.Private;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    upload: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
   };
 }
 
@@ -1615,6 +1637,7 @@ export interface ApiGdprSumbmissionGdprSumbmission
     draftAndPublish: true;
   };
   attributes: {
+    allpostapidata: Schema.Attribute.DynamicZone<['input.allpostapidata']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1629,6 +1652,10 @@ export interface ApiGdprSumbmissionGdprSumbmission
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    upload: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
   };
 }
 
@@ -1644,6 +1671,7 @@ export interface ApiHelpContactSubmissionHelpContactSubmission
     draftAndPublish: true;
   };
   attributes: {
+    allpostapidata: Schema.Attribute.DynamicZone<['input.allpostapidata']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1658,6 +1686,10 @@ export interface ApiHelpContactSubmissionHelpContactSubmission
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    upload: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
   };
 }
 

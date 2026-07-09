@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_input_uploadimgpdfs",
+  "info": {
+    "displayName": "uploadimgpdf"
+  },
+  "options": {},
+  "attributes": {
+    "upload": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

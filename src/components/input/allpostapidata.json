@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_input_allpostapidata",
+  "info": {
+    "displayName": "allpostapidata"
+  },
+  "options": {},
+  "attributes": {
+    "input": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

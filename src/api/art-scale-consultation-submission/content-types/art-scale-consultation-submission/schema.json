@@ -11,8 +11,24 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "allpostapidata": {
+      "type": "dynamiczone",
+      "components": [
+        "input.allpostapidata"
+      ]
+    },
     "formdata": {
       "type": "json"
+    },
+    "upload": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
