@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_navbar_columns",
+  "info": {
+    "displayName": "Column",
+    "icon": "list-ul"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navbar.link"
+    }
+  }
+}

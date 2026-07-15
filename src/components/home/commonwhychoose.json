@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_commonwhychooses",
+  "info": {
+    "displayName": "Commonwhychoose",
+    "icon": "question"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "commonwhychoosecard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.commonwhychoosecard"
+      ]
+    }
+  }
+}

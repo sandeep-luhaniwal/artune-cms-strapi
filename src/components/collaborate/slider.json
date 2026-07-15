@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_collaborate_sliders",
+  "info": {
+    "displayName": "Slider",
+    "icon": "images"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "collaborateslidercard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.collaborateslidercard"
+      ]
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    }
+  }
+}

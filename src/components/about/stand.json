@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_stands",
+  "info": {
+    "displayName": "Stand",
+    "icon": "shield-alt"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "aboutstandcard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.aboutstandcard"
+    }
+  }
+}

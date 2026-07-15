@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_about_artunes",
+  "info": {
+    "displayName": "Artune",
+    "icon": "layer-group"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "aboutartunecard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.aboutartunecard"
+    }
+  }
+}

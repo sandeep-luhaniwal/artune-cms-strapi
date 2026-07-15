@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_promotions_featured_drops",
+  "info": {
+    "displayName": "Featured Drop",
+    "icon": "bolt"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

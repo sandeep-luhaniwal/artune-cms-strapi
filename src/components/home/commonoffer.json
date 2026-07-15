@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_home_commonoffers",
+  "info": {
+    "displayName": "Commonoffer",
+    "icon": "gift"
+  },
+  "options": {},
+  "attributes": {
+    "para1": {
+      "type": "string"
+    },
+    "para2": {
+      "type": "text"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "heading": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "description_one": {
+      "type": "text"
+    },
+    "description_two": {
+      "type": "text"
+    }
+  }
+}

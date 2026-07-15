@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_home_detailscards",
+  "info": {
+    "displayName": "Detailscard",
+    "icon": "credit-card"
+  },
+  "options": {},
+  "attributes": {
+    "detailscard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.detailscard"
+      ]
+    }
+  }
+}

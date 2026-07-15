@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_spine_advantages",
+  "info": {
+    "displayName": "Advantage",
+    "icon": "award"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "text1": {
+      "type": "string"
+    },
+    "text2": {
+      "type": "string"
+    },
+    "text3": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "button_one": {
+      "type": "string"
+    },
+    "button_two": {
+      "type": "string"
+    },
+    "button_one_url": {
+      "type": "string"
+    },
+    "button_two_url": {
+      "type": "string"
+    }
+  }
+}

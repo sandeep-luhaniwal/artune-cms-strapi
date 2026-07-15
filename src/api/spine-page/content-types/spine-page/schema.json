@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "spine_pages",
+  "info": {
+    "singularName": "spine-page",
+    "pluralName": "spine-pages",
+    "displayName": "Spine Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "spine.hero",
+        "spine.threemin",
+        "spine.onesystem",
+        "spine.slider",
+        "spine.step",
+        "spine.nodrill",
+        "spine.advantage",
+        "spine.get"
+      ]
+    }
+  }
+}

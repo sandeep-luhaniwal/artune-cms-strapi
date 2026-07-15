@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_about_whos",
+  "info": {
+    "displayName": "Who",
+    "icon": "users"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "title": {
+      "type": "text"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    }
+  }
+}

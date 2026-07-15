@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "philosophy_pages",
+  "info": {
+    "singularName": "philosophy-page",
+    "pluralName": "philosophy-pages",
+    "displayName": "Philosophy Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "philosophy.hero",
+        "philosophy.manifesto",
+        "philosophy.value",
+        "philosophy.oureco",
+        "philosophy.material",
+        "philosophy.journey",
+        "philosophy.eco"
+      ]
+    }
+  }
+}

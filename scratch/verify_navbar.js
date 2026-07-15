@@ -1,0 +1,17 @@
+const http = require('http');
+
+http.get('http://localhost:1337/api/navbar', (res) => {
+  let data = '';
+  res.on('data', chunk => data += chunk);
+  res.on('end', () => {
+    try {
+      const json = JSON.parse(data);
+      console.log('STATUS:', res.statusCode);
+      console.log('RESPONSE:', JSON.stringify(json, null, 2));
+    } catch(e) {
+      console.error('Failed to parse response JSON:', data);
+    }
+  });
+}).on('error', err => {
+  console.error('Error:', err.message);
+});

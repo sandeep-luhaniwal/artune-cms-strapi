@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_promotions_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "badgebgcolor": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "endtime": {
+      "type": "datetime"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "slugmatch": {
+      "type": "string"
+    }
+  }
+}

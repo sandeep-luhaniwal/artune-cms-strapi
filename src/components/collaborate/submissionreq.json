@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_collaborate_submissionreqs",
+  "info": {
+    "displayName": "Submission Requirements",
+    "icon": "clipboard-list"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "collsubreq": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.collsubreqcard"
+      ]
+    }
+  }
+}

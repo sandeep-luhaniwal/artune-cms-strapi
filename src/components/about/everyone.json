@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_about_everyones",
+  "info": {
+    "displayName": "Everyone",
+    "icon": "globe"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_one": {
+      "type": "string"
+    },
+    "button_two": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "button_one_url": {
+      "type": "string"
+    },
+    "button_two_url": {
+      "type": "string"
+    }
+  }
+}

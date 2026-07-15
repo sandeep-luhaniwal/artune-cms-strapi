@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_size_arts",
+  "info": {
+    "displayName": "Art",
+    "icon": "image"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "text"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "string"
+    },
+    "description1": {
+      "type": "text"
+    },
+    "bgimg": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

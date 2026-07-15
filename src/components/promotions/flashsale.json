@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_promotions_flashsales",
+  "info": {
+    "displayName": "Flash Sale",
+    "icon": "bolt"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "timer": {
+      "type": "datetime"
+    },
+    "offertext": {
+      "type": "string"
+    },
+    "productheading": {
+      "type": "string"
+    },
+    "allproductoff": {
+      "type": "string"
+    },
+    "salevalue": {
+      "type": "string"
+    },
+    "promotion_assets_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::promotion-assets-list.promotion-assets-list"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_size_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "sizeherocard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.sizeherocard"
+      ]
+    }
+  }
+}

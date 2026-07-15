@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_artscale_solutions",
+  "info": {
+    "displayName": "Solution",
+    "icon": "lightbulb"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.cards"
+      ]
+    }
+  }
+}

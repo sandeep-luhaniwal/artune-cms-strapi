@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_promotions_bundlelists",
+  "info": {
+    "displayName": "Bundle List",
+    "icon": "cubes"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "promotionproducts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::promotionproduct.promotionproduct"
+    }
+  }
+}

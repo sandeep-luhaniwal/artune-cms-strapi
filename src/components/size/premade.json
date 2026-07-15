@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_size_premades",
+  "info": {
+    "displayName": "Premade",
+    "icon": "box-open"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "sizepremadecard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.sizepremadecard"
+      ]
+    },
+    "button_one": {
+      "type": "string"
+    },
+    "button_two": {
+      "type": "string"
+    },
+    "button_one_url": {
+      "type": "string"
+    },
+    "button_two_url": {
+      "type": "string"
+    }
+  }
+}

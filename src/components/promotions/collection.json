@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_promotions_collections",
+  "info": {
+    "displayName": "Collection",
+    "icon": "images"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "timertitle": {
+      "type": "string"
+    },
+    "timer": {
+      "type": "datetime"
+    },
+    "claimed": {
+      "type": "integer"
+    },
+    "totalItems": {
+      "type": "integer"
+    },
+    "leftItems": {
+      "type": "integer"
+    }
+  }
+}

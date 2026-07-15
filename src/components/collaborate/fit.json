@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_collaborate_fits",
+  "info": {
+    "displayName": "Fit",
+    "icon": "handshake"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "collfitcard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.collfitcard"
+      ]
+    }
+  }
+}

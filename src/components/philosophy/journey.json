@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_philosophy_journeys",
+  "info": {
+    "displayName": "Journey",
+    "icon": "map-marker-alt"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "philosophyjourneycard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.philosophyjourneycard"
+      ]
+    }
+  }
+}

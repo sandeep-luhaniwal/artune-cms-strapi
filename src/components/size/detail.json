@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_size_details",
+  "info": {
+    "displayName": "Detail",
+    "icon": "info-circle"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "description_one": {
+      "type": "text"
+    },
+    "description_two": {
+      "type": "text"
+    },
+    "sizedetailcard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.sizedetailcard"
+      ]
+    }
+  }
+}

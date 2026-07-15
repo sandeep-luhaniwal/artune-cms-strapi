@@ -430,275 +430,40 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAboutartuneAboutartune extends Struct.SingleTypeSchema {
-  collectionName: 'aboutartunes';
+export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
+  collectionName: 'about_pages';
   info: {
-    displayName: 'Aboutartune';
-    pluralName: 'aboutartunes';
-    singularName: 'aboutartune';
+    displayName: 'About Page';
+    pluralName: 'about-pages';
+    singularName: 'about-page';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    aboutartunecard: Schema.Attribute.DynamicZone<['shared.aboutartunecard']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::aboutartune.aboutartune'
+      'api::about-page.about-page'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiAbouteveryoneAbouteveryone extends Struct.SingleTypeSchema {
-  collectionName: 'abouteveryones';
-  info: {
-    displayName: 'Abouteveryone';
-    pluralName: 'abouteveryones';
-    singularName: 'abouteveryone';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::abouteveryone.abouteveryone'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiAboutheroAbouthero extends Struct.SingleTypeSchema {
-  collectionName: 'aboutheroes';
-  info: {
-    displayName: 'Abouthero';
-    pluralName: 'aboutheroes';
-    singularName: 'abouthero';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::abouthero.abouthero'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiAboutideaAboutidea extends Struct.SingleTypeSchema {
-  collectionName: 'aboutideas';
-  info: {
-    displayName: 'Aboutidea';
-    pluralName: 'aboutideas';
-    singularName: 'aboutidea';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    aboutideacard: Schema.Attribute.DynamicZone<['shared.aboutideacard']>;
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::aboutidea.aboutidea'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiAboutourstoryAboutourstory extends Struct.SingleTypeSchema {
-  collectionName: 'aboutourstories';
-  info: {
-    displayName: 'Aboutourstory';
-    pluralName: 'aboutourstories';
-    singularName: 'aboutourstory';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    aboutourstorycard: Schema.Attribute.DynamicZone<
-      ['shared.aboutourstorycard']
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'about.hero',
+        'about.who',
+        'about.artune',
+        'about.ourstory',
+        'about.stand',
+        'about.everyone',
+        'about.idea',
+        'about.ready',
+      ]
     >;
-    badge: Schema.Attribute.String;
-    button: Schema.Attribute.String;
-    button_img: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    button_one: Schema.Attribute.String;
-    button_one_img: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_img: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::aboutourstory.aboutourstory'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    text1: Schema.Attribute.String;
-    text2: Schema.Attribute.String;
-    text3: Schema.Attribute.String;
-    title: Schema.Attribute.Text;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiAboutreadyAboutready extends Struct.SingleTypeSchema {
-  collectionName: 'aboutreadies';
-  info: {
-    displayName: 'Aboutready';
-    pluralName: 'aboutreadies';
-    singularName: 'aboutready';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::aboutready.aboutready'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiAboutstandAboutstand extends Struct.SingleTypeSchema {
-  collectionName: 'aboutstands';
-  info: {
-    displayName: 'Aboutstand';
-    pluralName: 'aboutstands';
-    singularName: 'aboutstand';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    aboutstandcard: Schema.Attribute.DynamicZone<['shared.aboutstandcard']>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::aboutstand.aboutstand'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiAboutwhoAboutwho extends Struct.SingleTypeSchema {
-  collectionName: 'aboutwhos';
-  info: {
-    displayName: 'Aboutwho';
-    pluralName: 'aboutwhos';
-    singularName: 'aboutwho';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::aboutwho.aboutwho'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.Text;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -841,283 +606,40 @@ export interface ApiArtistSubmissionArtistSubmission
   };
 }
 
-export interface ApiArtscalechangespaceArtscalechangespace
-  extends Struct.SingleTypeSchema {
-  collectionName: 'artscalechangespaces';
+export interface ApiArtscalePageArtscalePage extends Struct.SingleTypeSchema {
+  collectionName: 'artscale_pages';
   info: {
-    displayName: 'Artscalechangespace';
-    pluralName: 'artscalechangespaces';
-    singularName: 'artscalechangespace';
+    displayName: 'Artscale Page';
+    pluralName: 'artscale-pages';
+    singularName: 'artscale-page';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    after_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    befroe_img: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::artscale-page.artscale-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'artscale.hero',
+        'artscale.solution',
+        'artscale.premium',
+        'artscale.spine',
+        'artscale.story',
+        'artscale.how',
+        'artscale.partner',
+        'artscale.changespace',
+      ]
     >;
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::artscalechangespace.artscalechangespace'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiArtscaleheroArtscalehero extends Struct.SingleTypeSchema {
-  collectionName: 'artscaleheroes';
-  info: {
-    displayName: 'Artscalehero';
-    pluralName: 'artscaleheroes';
-    singularName: 'artscalehero';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    bgimg: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description_one: Schema.Attribute.Text;
-    description_two: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::artscalehero.artscalehero'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiArtscalehowArtscalehow extends Struct.SingleTypeSchema {
-  collectionName: 'artscalehows';
-  info: {
-    displayName: 'Artscalehow';
-    pluralName: 'artscalehows';
-    singularName: 'artscalehow';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    cardhow: Schema.Attribute.DynamicZone<['shared.cardhow']>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::artscalehow.artscalehow'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiArtscalepartnerArtscalepartner
-  extends Struct.SingleTypeSchema {
-  collectionName: 'artscalepartners';
-  info: {
-    displayName: 'Artscalepartner';
-    pluralName: 'artscalepartners';
-    singularName: 'artscalepartner';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    download_button: Schema.Attribute.String;
-    download_button_url: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::artscalepartner.artscalepartner'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiArtscalepremiumArtscalepremium
-  extends Struct.SingleTypeSchema {
-  collectionName: 'artscalepremiums';
-  info: {
-    displayName: 'Artscalepremium';
-    pluralName: 'artscalepremiums';
-    singularName: 'artscalepremium';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::artscalepremium.artscalepremium'
-    > &
-      Schema.Attribute.Private;
-    para1: Schema.Attribute.Text;
-    para1_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    para2: Schema.Attribute.Text;
-    para2_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    para3: Schema.Attribute.Text;
-    para3_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    para4: Schema.Attribute.Text;
-    para4_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    para5: Schema.Attribute.Text;
-    para5_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    para6: Schema.Attribute.Text;
-    para6_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiArtscalesoutionArtscalesoution
-  extends Struct.SingleTypeSchema {
-  collectionName: 'artscalesoutions';
-  info: {
-    displayName: 'Artscalesoution';
-    pluralName: 'artscalesoutions';
-    singularName: 'artscalesoution';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    cards: Schema.Attribute.DynamicZone<['shared.cards']>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::artscalesoution.artscalesoution'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiArtscalespineArtscalespine extends Struct.SingleTypeSchema {
-  collectionName: 'artscalespines';
-  info: {
-    displayName: 'Artscalespine';
-    pluralName: 'artscalespines';
-    singularName: 'artscalespine';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    card: Schema.Attribute.DynamicZone<['shared.title']>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    iconimg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::artscalespine.artscalespine'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiArtscalestoryArtscalestory extends Struct.SingleTypeSchema {
-  collectionName: 'artscalestories';
-  info: {
-    displayName: 'Artscalestory';
-    pluralName: 'artscalestories';
-    singularName: 'artscalestory';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    card: Schema.Attribute.DynamicZone<['shared.cardstroy']>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::artscalestory.artscalestory'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1193,226 +715,40 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCollaborateReadyCollaborateReady
+export interface ApiCollaboratePageCollaboratePage
   extends Struct.SingleTypeSchema {
-  collectionName: 'collaborate_readies';
+  collectionName: 'collaborate_pages';
   info: {
-    displayName: 'CollaborateReady';
-    pluralName: 'collaborate-readies';
-    singularName: 'collaborate-ready';
+    displayName: 'Collaborate Page';
+    pluralName: 'collaborate-pages';
+    singularName: 'collaborate-page';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::collaborate-ready.collaborate-ready'
+      'api::collaborate-page.collaborate-page'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiCollaboratefitCollaboratefit
-  extends Struct.SingleTypeSchema {
-  collectionName: 'collaboratefits';
-  info: {
-    displayName: 'Collaboratefit';
-    pluralName: 'collaboratefits';
-    singularName: 'collaboratefit';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    collfitcard: Schema.Attribute.DynamicZone<['shared.collfitcard']>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::collaboratefit.collaboratefit'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiCollaborateheroCollaboratehero
-  extends Struct.SingleTypeSchema {
-  collectionName: 'collaborateheroes';
-  info: {
-    displayName: 'Collaboratehero';
-    pluralName: 'collaborateheroes';
-    singularName: 'collaboratehero';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    bgimg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::collaboratehero.collaboratehero'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiCollaboratesliderCollaborateslider
-  extends Struct.SingleTypeSchema {
-  collectionName: 'collaboratesliders';
-  info: {
-    displayName: 'Collaborateslider';
-    pluralName: 'collaboratesliders';
-    singularName: 'collaborateslider';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    collaborateslidercard: Schema.Attribute.DynamicZone<
-      ['shared.collaborateslidercard']
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'collaborate.hero',
+        'collaborate.welcome',
+        'collaborate.whyjoin',
+        'collaborate.slider',
+        'collaborate.fit',
+        'collaborate.submissionreq',
+        'collaborate.ready',
+      ]
     >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::collaborateslider.collaborateslider'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiCollaboratesubmissionreqCollaboratesubmissionreq
-  extends Struct.SingleTypeSchema {
-  collectionName: 'collaboratesubmissionreqs';
-  info: {
-    displayName: 'Collaboratesubmissionreq';
-    pluralName: 'collaboratesubmissionreqs';
-    singularName: 'collaboratesubmissionreq';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    collsubreq: Schema.Attribute.DynamicZone<['shared.collsubreqcard']>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::collaboratesubmissionreq.collaboratesubmissionreq'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiCollaboratewhyjoinCollaboratewhyjoin
-  extends Struct.SingleTypeSchema {
-  collectionName: 'collaboratewhyjoins';
-  info: {
-    displayName: 'Collaboratewhyjoin';
-    pluralName: 'collaboratewhyjoins';
-    singularName: 'collaboratewhyjoin';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    card: Schema.Attribute.DynamicZone<['shared.collaboratecardjoin']>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::collaboratewhyjoin.collaboratewhyjoin'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiCollaboratwelcomeCollaboratwelcome
-  extends Struct.SingleTypeSchema {
-  collectionName: 'collaboratwelcomes';
-  info: {
-    displayName: 'Collaboratwelcome';
-    pluralName: 'collaboratwelcomes';
-    singularName: 'collaboratwelcome';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    card: Schema.Attribute.DynamicZone<['shared.collaboratewelcomecard']>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::collaboratwelcome.collaboratwelcome'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1465,72 +801,6 @@ export interface ApiCollectionBannerCollectionBanner
   };
 }
 
-export interface ApiCommonofferCommonoffer extends Struct.SingleTypeSchema {
-  collectionName: 'commonoffers';
-  info: {
-    displayName: 'commonoffer';
-    pluralName: 'commonoffers';
-    singularName: 'commonoffer';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    description_one: Schema.Attribute.Text;
-    description_two: Schema.Attribute.Text;
-    heading: Schema.Attribute.Text;
-    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::commonoffer.commonoffer'
-    > &
-      Schema.Attribute.Private;
-    para1: Schema.Attribute.String;
-    para2: Schema.Attribute.Text;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiCommonwhychooseCommonwhychoose
-  extends Struct.SingleTypeSchema {
-  collectionName: 'commonwhychooses';
-  info: {
-    displayName: 'commonwhychoose';
-    pluralName: 'commonwhychooses';
-    singularName: 'commonwhychoose';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    commonwhychoosecard: Schema.Attribute.DynamicZone<
-      ['shared.commonwhychoosecard']
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::commonwhychoose.commonwhychoose'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiCrateYourDesignSubmissionCrateYourDesignSubmission
   extends Struct.CollectionTypeSchema {
   collectionName: 'crate_your_design_submissions';
@@ -1567,34 +837,6 @@ export interface ApiCrateYourDesignSubmissionCrateYourDesignSubmission
   };
 }
 
-export interface ApiDetailscardDetailscard extends Struct.SingleTypeSchema {
-  collectionName: 'detailscards';
-  info: {
-    displayName: 'detailscard';
-    pluralName: 'detailscards';
-    singularName: 'detailscard';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    detailscard: Schema.Attribute.DynamicZone<['shared.detailscard']>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::detailscard.detailscard'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiDownloadfullguidpdfclientDownloadfullguidpdfclient
   extends Struct.CollectionTypeSchema {
   collectionName: 'downloadfullguidpdfclients';
@@ -1622,6 +864,41 @@ export interface ApiDownloadfullguidpdfclientDownloadfullguidpdfclient
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     userform: Schema.Attribute.String;
+  };
+}
+
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    displayName: 'Footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bottom_links: Schema.Attribute.Component<'footer.link', true>;
+    columns: Schema.Attribute.Component<'footer.navigation-column', true>;
+    copyright: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer.footer'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    newsletter_button_text: Schema.Attribute.String;
+    newsletter_placeholder: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    social_links: Schema.Attribute.Component<'footer.social-link', true>;
+    tagline: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1693,218 +970,54 @@ export interface ApiHelpContactSubmissionHelpContactSubmission
   };
 }
 
-export interface ApiHomeartistHomeartist extends Struct.SingleTypeSchema {
-  collectionName: 'homeartists';
+export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
+  collectionName: 'home_pages';
   info: {
-    displayName: 'homeartist';
-    pluralName: 'homeartists';
-    singularName: 'homeartist';
+    displayName: 'Home Page';
+    pluralName: 'home-pages';
+    singularName: 'home-page';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    img_one: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    img_three: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    img_two: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::homeartist.homeartist'
-    > &
-      Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHomebannerHomebanner extends Struct.SingleTypeSchema {
-  collectionName: 'homebanners';
-  info: {
-    displayName: 'homebanner';
-    pluralName: 'homebanners';
-    singularName: 'homebanner';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    bgcolor: Schema.Attribute.String;
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    buttonbgcolor: Schema.Attribute.String;
-    code_value: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Blocks;
-    descriptioncolor: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    headingcolor: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::homebanner.homebanner'
+      'api::home-page.home-page'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    timer: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHomebgvideoHomebgvideo extends Struct.SingleTypeSchema {
-  collectionName: 'homebgvideos';
-  info: {
-    displayName: 'homebgvideo';
-    pluralName: 'homebgvideos';
-    singularName: 'homebgvideo';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    bgimg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::homebgvideo.homebgvideo'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHomecollectionbannerHomecollectionbanner
-  extends Struct.SingleTypeSchema {
-  collectionName: 'homecollectionbanners';
-  info: {
-    displayName: 'homecollectionbanner';
-    pluralName: 'homecollectionbanners';
-    singularName: 'homecollectionbanner';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    bgcolor: Schema.Attribute.String;
-    button: Schema.Attribute.String;
-    button_bg: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    buttoncolor: Schema.Attribute.String;
-    code_value_textcolor: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    headingcolor: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::homecollectionbanner.homecollectionbanner'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHomethreedHomethreed extends Struct.SingleTypeSchema {
-  collectionName: 'homethreeds';
-  info: {
-    displayName: 'homethreed';
-    pluralName: 'homethreeds';
-    singularName: 'homethreed';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::homethreed.homethreed'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHomewhyartuneHomewhyartune extends Struct.SingleTypeSchema {
-  collectionName: 'homewhyartunes';
-  info: {
-    displayName: 'homewhyartune';
-    pluralName: 'homewhyartunes';
-    singularName: 'homewhyartune';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    bgimage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    homewhyartunecard: Schema.Attribute.DynamicZone<
-      ['shared.homewhyartunecard']
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'home.mainhero',
+        'home.homebanner',
+        'home.homebgvideo',
+        'home.homecollectionbanner',
+        'home.homethreed',
+        'home.homewhyartune',
+        'home.homeartist',
+        'home.commonoffer',
+        'home.commonwhychoose',
+        'home.detailscard',
+      ]
     >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::homewhyartune.homewhyartune'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
   };
 }
 
-export interface ApiMainheroMainhero extends Struct.SingleTypeSchema {
-  collectionName: 'mainheroes';
+export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
+  collectionName: 'navbars';
   info: {
-    displayName: 'Mainhero';
-    pluralName: 'mainheroes';
-    singularName: 'mainhero';
+    displayName: 'Navbar';
+    pluralName: 'navbars';
+    singularName: 'navbar';
   };
   options: {
     draftAndPublish: true;
@@ -1913,47 +1026,14 @@ export interface ApiMainheroMainhero extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heading: Schema.Attribute.Component<'shared.mainleftheading', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::mainhero.mainhero'
+      'api::navbar.navbar'
     > &
       Schema.Attribute.Private;
-    newdrop: Schema.Attribute.Component<'shared.newdrop', false>;
-    offer: Schema.Attribute.Component<'shared.offerhero', false>;
-    publishedAt: Schema.Attribute.DateTime;
-    simpleimage: Schema.Attribute.Component<'shared.simple-img', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPhilosophyecoPhilosophyeco extends Struct.SingleTypeSchema {
-  collectionName: 'philosophyecos';
-  info: {
-    displayName: 'Philosophyeco';
-    pluralName: 'philosophyecos';
-    singularName: 'philosophyeco';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::philosophyeco.philosophyeco'
-    > &
-      Schema.Attribute.Private;
+    logo_text: Schema.Attribute.String & Schema.Attribute.Required;
+    menu_items: Schema.Attribute.Component<'navbar.menu-item', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1961,206 +1041,40 @@ export interface ApiPhilosophyecoPhilosophyeco extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiPhilosophyheroPhilosophyhero
+export interface ApiPhilosophyPagePhilosophyPage
   extends Struct.SingleTypeSchema {
-  collectionName: 'philosophyheroes';
+  collectionName: 'philosophy_pages';
   info: {
-    displayName: 'Philosophyhero';
-    pluralName: 'philosophyheroes';
-    singularName: 'philosophyhero';
+    displayName: 'Philosophy Page';
+    pluralName: 'philosophy-pages';
+    singularName: 'philosophy-page';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    bgimg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::philosophyhero.philosophyhero'
+      'api::philosophy-page.philosophy-page'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPhilosophyjourneyPhilosophyjourney
-  extends Struct.SingleTypeSchema {
-  collectionName: 'philosophyjourneys';
-  info: {
-    displayName: 'Philosophyjourney';
-    pluralName: 'philosophyjourneys';
-    singularName: 'philosophyjourney';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::philosophyjourney.philosophyjourney'
-    > &
-      Schema.Attribute.Private;
-    philosophyjourneycard: Schema.Attribute.DynamicZone<
-      ['shared.philosophyjourneycard']
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'philosophy.hero',
+        'philosophy.manifesto',
+        'philosophy.value',
+        'philosophy.oureco',
+        'philosophy.material',
+        'philosophy.journey',
+        'philosophy.eco',
+      ]
     >;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPhilosophymanifestoPhilosophymanifesto
-  extends Struct.SingleTypeSchema {
-  collectionName: 'philosophymanifestos';
-  info: {
-    displayName: 'Philosophymanifesto';
-    pluralName: 'philosophymanifestos';
-    singularName: 'philosophymanifesto';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    bgimg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.Text;
-    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::philosophymanifesto.philosophymanifesto'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    text1: Schema.Attribute.Text;
-    text2: Schema.Attribute.Text;
-    text3: Schema.Attribute.Text;
-    text4: Schema.Attribute.Text;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPhilosophymaterialPhilosophymaterial
-  extends Struct.SingleTypeSchema {
-  collectionName: 'philosophymaterials';
-  info: {
-    displayName: 'Philosophymaterial';
-    pluralName: 'philosophymaterials';
-    singularName: 'philosophymaterial';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::philosophymaterial.philosophymaterial'
-    > &
-      Schema.Attribute.Private;
-    philosophymaterialcard: Schema.Attribute.DynamicZone<
-      ['shared.philosophymaterialcard']
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPhilosophyourecoPhilosophyoureco
-  extends Struct.SingleTypeSchema {
-  collectionName: 'philosophyourecos';
-  info: {
-    displayName: 'Philosophyoureco';
-    pluralName: 'philosophyourecos';
-    singularName: 'philosophyoureco';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::philosophyoureco.philosophyoureco'
-    > &
-      Schema.Attribute.Private;
-    philosophyourecocard: Schema.Attribute.DynamicZone<
-      ['shared.philosophyourecocard']
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPhilosophyvaluePhilosophyvalue
-  extends Struct.SingleTypeSchema {
-  collectionName: 'philosophyvalues';
-  info: {
-    displayName: 'Philosophyvalue';
-    pluralName: 'philosophyvalues';
-    singularName: 'philosophyvalue';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::philosophyvalue.philosophyvalue'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2368,43 +1282,6 @@ export interface ApiPostjoinasartistPostjoinasartist
   };
 }
 
-export interface ApiPromotionAssetsCategoryPromotionAssetsCategory
-  extends Struct.SingleTypeSchema {
-  collectionName: 'promotion_assets_categories';
-  info: {
-    displayName: 'PromotionAssetsCategory';
-    pluralName: 'promotion-assets-categories';
-    singularName: 'promotion-assets-category';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotion-assets-category.promotion-assets-category'
-    > &
-      Schema.Attribute.Private;
-    promotion_assets_lists: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotion-assets-list.promotion-assets-list'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiPromotionAssetsListPromotionAssetsList
   extends Struct.CollectionTypeSchema {
   collectionName: 'promotion_assets_lists';
@@ -2434,160 +1311,6 @@ export interface ApiPromotionAssetsListPromotionAssetsList
     slug: Schema.Attribute.UID<'title'>;
     slugvalue: Schema.Attribute.String;
     title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPromotionbundlelistPromotionbundlelist
-  extends Struct.SingleTypeSchema {
-  collectionName: 'promotionbundlelists';
-  info: {
-    displayName: 'Promotionbundlelist';
-    pluralName: 'promotionbundlelists';
-    singularName: 'promotionbundlelist';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotionbundlelist.promotionbundlelist'
-    > &
-      Schema.Attribute.Private;
-    promotionproducts: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotionproduct.promotionproduct'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPromotioncollectionPromotioncollection
-  extends Struct.SingleTypeSchema {
-  collectionName: 'promotioncollections';
-  info: {
-    displayName: 'Promotioncollection';
-    pluralName: 'promotioncollections';
-    singularName: 'promotioncollection';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    badge: Schema.Attribute.String;
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    claimed: Schema.Attribute.Integer;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    leftItems: Schema.Attribute.Integer;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotioncollection.promotioncollection'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
-    timer: Schema.Attribute.DateTime;
-    timertitle: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-    totalItems: Schema.Attribute.Integer;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPromotiondepthsalePromotiondepthsale
-  extends Struct.SingleTypeSchema {
-  collectionName: 'promotiondepthsales';
-  info: {
-    displayName: 'Promotiondepthsale';
-    pluralName: 'promotiondepthsales';
-    singularName: 'promotiondepthsale';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    badge: Schema.Attribute.String;
-    codevalue: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotiondepthsale.promotiondepthsale'
-    > &
-      Schema.Attribute.Private;
-    productdescription: Schema.Attribute.String;
-    productheading: Schema.Attribute.String;
-    promotion_assets_lists: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotion-assets-list.promotion-assets-list'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPromotionflashsalePromotionflashsale
-  extends Struct.SingleTypeSchema {
-  collectionName: 'promotionflashsales';
-  info: {
-    displayName: 'Promotionflashsale';
-    pluralName: 'promotionflashsales';
-    singularName: 'promotionflashsale';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    allproductoff: Schema.Attribute.String;
-    badge: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotionflashsale.promotionflashsale'
-    > &
-      Schema.Attribute.Private;
-    offertext: Schema.Attribute.String;
-    productheading: Schema.Attribute.String;
-    promotion_assets_lists: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotion-assets-list.promotion-assets-list'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    salevalue: Schema.Attribute.String;
-    timer: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2662,51 +1385,13 @@ export interface ApiPromotionsCategoryPromotionsCategory
   };
 }
 
-export interface ApiPromotionsHeroPromotionsHero
+export interface ApiPromotionsPagePromotionsPage
   extends Struct.SingleTypeSchema {
-  collectionName: 'promotions_heroes';
+  collectionName: 'promotions_pages';
   info: {
-    displayName: 'PromotionsHero';
-    pluralName: 'promotions-heroes';
-    singularName: 'promotions-hero';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    badge: Schema.Attribute.String;
-    badgebgcolor: Schema.Attribute.String;
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.String;
-    endtime: Schema.Attribute.DateTime;
-    heading: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotions-hero.promotions-hero'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'heading'>;
-    slugmatch: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPromotionsSubCategoryPromotionsSubCategory
-  extends Struct.SingleTypeSchema {
-  collectionName: 'promotions_sub_categories';
-  info: {
-    displayName: 'Promotionfeatureddrop';
-    pluralName: 'promotions-sub-categories';
-    singularName: 'promotions-sub-category';
+    displayName: 'Promotions Page';
+    pluralName: 'promotions-pages';
+    singularName: 'promotions-page';
   };
   options: {
     draftAndPublish: true;
@@ -2718,12 +1403,23 @@ export interface ApiPromotionsSubCategoryPromotionsSubCategory
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::promotions-sub-category.promotions-sub-category'
+      'api::promotions-page.promotions-page'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'promotions.hero',
+        'promotions.depthsale',
+        'promotions.flashsale',
+        'promotions.seasonalsale',
+        'promotions.vip',
+        'promotions.bundlelist',
+        'promotions.collection',
+        'promotions.featureddrop',
+      ]
+    >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2773,73 +1469,6 @@ export interface ApiPromotionscategorydatalistPromotionscategorydatalist
   };
 }
 
-export interface ApiPromotionseasonalsalePromotionseasonalsale
-  extends Struct.SingleTypeSchema {
-  collectionName: 'promotionseasonalsales';
-  info: {
-    displayName: 'promotionseasonalsale';
-    pluralName: 'promotionseasonalsales';
-    singularName: 'promotionseasonalsale';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    badge: Schema.Attribute.String;
-    codevalue: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotionseasonalsale.promotionseasonalsale'
-    > &
-      Schema.Attribute.Private;
-    productdescription: Schema.Attribute.String;
-    productheading: Schema.Attribute.String;
-    promotion_assets_lists: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotion-assets-list.promotion-assets-list'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPromotionvipPromotionvip extends Struct.SingleTypeSchema {
-  collectionName: 'promotionvips';
-  info: {
-    displayName: 'Promotionvip';
-    pluralName: 'promotionvips';
-    singularName: 'promotionvip';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::promotionvip.promotionvip'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiSeoallpagecreateSeoallpagecreate
   extends Struct.CollectionTypeSchema {
   collectionName: 'seoallpagecreates';
@@ -2877,76 +1506,12 @@ export interface ApiSeoallpagecreateSeoallpagecreate
   };
 }
 
-export interface ApiSizeartSizeart extends Struct.SingleTypeSchema {
-  collectionName: 'sizearts';
+export interface ApiSizePageSizePage extends Struct.SingleTypeSchema {
+  collectionName: 'size_pages';
   info: {
-    displayName: 'Sizeart';
-    pluralName: 'sizearts';
-    singularName: 'sizeart';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    bgimg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.String;
-    description1: Schema.Attribute.Text;
-    heading: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::sizeart.sizeart'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.Text;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSizecomparisonSizecomparison
-  extends Struct.SingleTypeSchema {
-  collectionName: 'sizecomparisons';
-  info: {
-    displayName: 'Sizecomparison';
-    pluralName: 'sizecomparisons';
-    singularName: 'sizecomparison';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::sizecomparison.sizecomparison'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    tabel: Schema.Attribute.DynamicZone<['shared.tabel']>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSizedetailSizedetail extends Struct.SingleTypeSchema {
-  collectionName: 'sizedetails';
-  info: {
-    displayName: 'Sizedetail';
-    pluralName: 'sizedetails';
-    singularName: 'sizedetail';
+    displayName: 'Size Page';
+    pluralName: 'size-pages';
+    singularName: 'size-page';
   };
   options: {
     draftAndPublish: true;
@@ -2955,559 +1520,72 @@ export interface ApiSizedetailSizedetail extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    description_one: Schema.Attribute.Text;
-    description_two: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::sizedetail.sizedetail'
+      'api::size-page.size-page'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    sizedetailcard: Schema.Attribute.DynamicZone<['shared.sizedetailcard']>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSizefaqSizefaq extends Struct.SingleTypeSchema {
-  collectionName: 'sizefaqs';
-  info: {
-    displayName: 'Sizefaq';
-    pluralName: 'sizefaqs';
-    singularName: 'sizefaq';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::sizefaq.sizefaq'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    sizefaqcard: Schema.Attribute.DynamicZone<['shared.sizefaqcard']>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSizeformatSizeformat extends Struct.SingleTypeSchema {
-  collectionName: 'sizeformats';
-  info: {
-    displayName: 'Sizeformat';
-    pluralName: 'sizeformats';
-    singularName: 'sizeformat';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    formatcard: Schema.Attribute.DynamicZone<['shared.formatcard']>;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::sizeformat.sizeformat'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSizegeometrySizegeometry extends Struct.SingleTypeSchema {
-  collectionName: 'sizegeometries';
-  info: {
-    displayName: 'Sizegeometry';
-    pluralName: 'sizegeometries';
-    singularName: 'sizegeometry';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    description_one: Schema.Attribute.String;
-    description1: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    imgdes: Schema.Attribute.String;
-    imgdetails: Schema.Attribute.String;
-    imgtitle: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::sizegeometry.sizegeometry'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    size: Schema.Attribute.String;
-    sizedetails: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    value: Schema.Attribute.String;
-  };
-}
-
-export interface ApiSizeheroSizehero extends Struct.SingleTypeSchema {
-  collectionName: 'sizeheroes';
-  info: {
-    displayName: 'Sizehero';
-    pluralName: 'sizeheroes';
-    singularName: 'sizehero';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::sizehero.sizehero'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    sizeherocard: Schema.Attribute.DynamicZone<['shared.sizeherocard']>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSizepremadeSizepremade extends Struct.SingleTypeSchema {
-  collectionName: 'sizepremades';
-  info: {
-    displayName: 'Sizepremade';
-    pluralName: 'sizepremades';
-    singularName: 'sizepremade';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::sizepremade.sizepremade'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    sizepremadecard: Schema.Attribute.DynamicZone<['shared.sizepremadecard']>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSizetrustSizetrust extends Struct.SingleTypeSchema {
-  collectionName: 'sizetrusts';
-  info: {
-    displayName: 'Sizetrust';
-    pluralName: 'sizetrusts';
-    singularName: 'sizetrust';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::sizetrust.sizetrust'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    sizetrustcard: Schema.Attribute.DynamicZone<['shared.sizetrustcard']>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSizetwomaterialSizetwomaterial
-  extends Struct.SingleTypeSchema {
-  collectionName: 'sizetwomaterials';
-  info: {
-    displayName: 'Sizetwomaterial';
-    pluralName: 'sizetwomaterials';
-    singularName: 'sizetwomaterial';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::sizetwomaterial.sizetwomaterial'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    sizetwomaterialcard: Schema.Attribute.DynamicZone<
-      ['shared.sizetwomaterialcard']
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'size.hero',
+        'size.art',
+        'size.geometry',
+        'size.premade',
+        'size.yourformat',
+        'size.twomaterial',
+        'size.detail',
+        'size.comparison',
+        'size.trust',
+        'size.faq',
+        'size.format',
+      ]
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
   };
 }
 
-export interface ApiSizeyourformatSizeyourformat
-  extends Struct.SingleTypeSchema {
-  collectionName: 'sizeyourformats';
+export interface ApiSpinePageSpinePage extends Struct.SingleTypeSchema {
+  collectionName: 'spine_pages';
   info: {
-    displayName: 'Sizeyourformat';
-    pluralName: 'sizeyourformats';
-    singularName: 'sizeyourformat';
+    displayName: 'Spine Page';
+    pluralName: 'spine-pages';
+    singularName: 'spine-page';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::sizeyourformat.sizeyourformat'
+      'api::spine-page.spine-page'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    sizeyourformatcard: Schema.Attribute.DynamicZone<
-      ['shared.sizeyourformatcard']
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'spine.hero',
+        'spine.threemin',
+        'spine.onesystem',
+        'spine.slider',
+        'spine.step',
+        'spine.nodrill',
+        'spine.advantage',
+        'spine.get',
+      ]
     >;
-    title: Schema.Attribute.String;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSpineadvantageSpineadvantage
-  extends Struct.SingleTypeSchema {
-  collectionName: 'spineadvantages';
-  info: {
-    displayName: 'Spineadvantage';
-    pluralName: 'spineadvantages';
-    singularName: 'spineadvantage';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::spineadvantage.spineadvantage'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    text1: Schema.Attribute.String;
-    text2: Schema.Attribute.String;
-    text3: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSpinegetSpineget extends Struct.SingleTypeSchema {
-  collectionName: 'spinegets';
-  info: {
-    displayName: 'Spineget';
-    pluralName: 'spinegets';
-    singularName: 'spineget';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::spineget.spineget'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSpineheroSpinehero extends Struct.SingleTypeSchema {
-  collectionName: 'spineheroes';
-  info: {
-    displayName: 'Spinehero';
-    pluralName: 'spineheroes';
-    singularName: 'spinehero';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    bgimg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    button_one: Schema.Attribute.String;
-    button_one_url: Schema.Attribute.String;
-    button_two: Schema.Attribute.String;
-    button_two_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::spinehero.spinehero'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSpinenodrillSpinenodrill extends Struct.SingleTypeSchema {
-  collectionName: 'spinenodrills';
-  info: {
-    displayName: 'Spinenodrill';
-    pluralName: 'spinenodrills';
-    singularName: 'spinenodrill';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::spinenodrill.spinenodrill'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    spinenodrillcard: Schema.Attribute.DynamicZone<['shared.spinenodrillcard']>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
-export interface ApiSpineonesystemSpineonesystem
-  extends Struct.SingleTypeSchema {
-  collectionName: 'spineonesystems';
-  info: {
-    displayName: 'Spineonesystem';
-    pluralName: 'spineonesystems';
-    singularName: 'spineonesystem';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::spineonesystem.spineonesystem'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    spinesystemcard: Schema.Attribute.DynamicZone<['shared.spinesystemcard']>;
-    text_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    text1: Schema.Attribute.Text;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSpinesliderSpineslider extends Struct.SingleTypeSchema {
-  collectionName: 'spinesliders';
-  info: {
-    displayName: 'Spineslider';
-    pluralName: 'spinesliders';
-    singularName: 'spineslider';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::spineslider.spineslider'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    spineslidercard: Schema.Attribute.DynamicZone<['shared.spineslidercard']>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSpinestepSpinestep extends Struct.SingleTypeSchema {
-  collectionName: 'spinesteps';
-  info: {
-    displayName: 'Spinestep';
-    pluralName: 'spinesteps';
-    singularName: 'spinestep';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    badge: Schema.Attribute.String;
-    button: Schema.Attribute.String;
-    button_img: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    button_url: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    downlaodspdf_button: Schema.Attribute.Media<'files'>;
-    downlaodspdf_button_url: Schema.Attribute.Media<'files' | 'audios'>;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::spinestep.spinestep'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    spinestepcard: Schema.Attribute.DynamicZone<['shared.spinestepcard']>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSpinethreeminSpinethreemin extends Struct.SingleTypeSchema {
-  collectionName: 'spinethreemins';
-  info: {
-    displayName: 'Spinethreemin';
-    pluralName: 'spinethreemins';
-    singularName: 'spinethreemin';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::spinethreemin.spinethreemin'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    text1: Schema.Attribute.String;
-    text2: Schema.Attribute.String;
-    text3: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -4050,96 +2128,38 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::aboutartune.aboutartune': ApiAboutartuneAboutartune;
-      'api::abouteveryone.abouteveryone': ApiAbouteveryoneAbouteveryone;
-      'api::abouthero.abouthero': ApiAboutheroAbouthero;
-      'api::aboutidea.aboutidea': ApiAboutideaAboutidea;
-      'api::aboutourstory.aboutourstory': ApiAboutourstoryAboutourstory;
-      'api::aboutready.aboutready': ApiAboutreadyAboutready;
-      'api::aboutstand.aboutstand': ApiAboutstandAboutstand;
-      'api::aboutwho.aboutwho': ApiAboutwhoAboutwho;
+      'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::allartistsdatalist.allartistsdatalist': ApiAllartistsdatalistAllartistsdatalist;
       'api::art-scale-consultation-submission.art-scale-consultation-submission': ApiArtScaleConsultationSubmissionArtScaleConsultationSubmission;
       'api::art-scale-quote-submission.art-scale-quote-submission': ApiArtScaleQuoteSubmissionArtScaleQuoteSubmission;
       'api::artist-submission.artist-submission': ApiArtistSubmissionArtistSubmission;
-      'api::artscalechangespace.artscalechangespace': ApiArtscalechangespaceArtscalechangespace;
-      'api::artscalehero.artscalehero': ApiArtscaleheroArtscalehero;
-      'api::artscalehow.artscalehow': ApiArtscalehowArtscalehow;
-      'api::artscalepartner.artscalepartner': ApiArtscalepartnerArtscalepartner;
-      'api::artscalepremium.artscalepremium': ApiArtscalepremiumArtscalepremium;
-      'api::artscalesoution.artscalesoution': ApiArtscalesoutionArtscalesoution;
-      'api::artscalespine.artscalespine': ApiArtscalespineArtscalespine;
-      'api::artscalestory.artscalestory': ApiArtscalestoryArtscalestory;
+      'api::artscale-page.artscale-page': ApiArtscalePageArtscalePage;
       'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::blog.blog': ApiBlogBlog;
-      'api::collaborate-ready.collaborate-ready': ApiCollaborateReadyCollaborateReady;
-      'api::collaboratefit.collaboratefit': ApiCollaboratefitCollaboratefit;
-      'api::collaboratehero.collaboratehero': ApiCollaborateheroCollaboratehero;
-      'api::collaborateslider.collaborateslider': ApiCollaboratesliderCollaborateslider;
-      'api::collaboratesubmissionreq.collaboratesubmissionreq': ApiCollaboratesubmissionreqCollaboratesubmissionreq;
-      'api::collaboratewhyjoin.collaboratewhyjoin': ApiCollaboratewhyjoinCollaboratewhyjoin;
-      'api::collaboratwelcome.collaboratwelcome': ApiCollaboratwelcomeCollaboratwelcome;
+      'api::collaborate-page.collaborate-page': ApiCollaboratePageCollaboratePage;
       'api::collection-banner.collection-banner': ApiCollectionBannerCollectionBanner;
-      'api::commonoffer.commonoffer': ApiCommonofferCommonoffer;
-      'api::commonwhychoose.commonwhychoose': ApiCommonwhychooseCommonwhychoose;
       'api::crate-your-design-submission.crate-your-design-submission': ApiCrateYourDesignSubmissionCrateYourDesignSubmission;
-      'api::detailscard.detailscard': ApiDetailscardDetailscard;
       'api::downloadfullguidpdfclient.downloadfullguidpdfclient': ApiDownloadfullguidpdfclientDownloadfullguidpdfclient;
+      'api::footer.footer': ApiFooterFooter;
       'api::gdpr-sumbmission.gdpr-sumbmission': ApiGdprSumbmissionGdprSumbmission;
       'api::help-contact-submission.help-contact-submission': ApiHelpContactSubmissionHelpContactSubmission;
-      'api::homeartist.homeartist': ApiHomeartistHomeartist;
-      'api::homebanner.homebanner': ApiHomebannerHomebanner;
-      'api::homebgvideo.homebgvideo': ApiHomebgvideoHomebgvideo;
-      'api::homecollectionbanner.homecollectionbanner': ApiHomecollectionbannerHomecollectionbanner;
-      'api::homethreed.homethreed': ApiHomethreedHomethreed;
-      'api::homewhyartune.homewhyartune': ApiHomewhyartuneHomewhyartune;
-      'api::mainhero.mainhero': ApiMainheroMainhero;
-      'api::philosophyeco.philosophyeco': ApiPhilosophyecoPhilosophyeco;
-      'api::philosophyhero.philosophyhero': ApiPhilosophyheroPhilosophyhero;
-      'api::philosophyjourney.philosophyjourney': ApiPhilosophyjourneyPhilosophyjourney;
-      'api::philosophymanifesto.philosophymanifesto': ApiPhilosophymanifestoPhilosophymanifesto;
-      'api::philosophymaterial.philosophymaterial': ApiPhilosophymaterialPhilosophymaterial;
-      'api::philosophyoureco.philosophyoureco': ApiPhilosophyourecoPhilosophyoureco;
-      'api::philosophyvalue.philosophyvalue': ApiPhilosophyvaluePhilosophyvalue;
+      'api::home-page.home-page': ApiHomePageHomePage;
+      'api::navbar.navbar': ApiNavbarNavbar;
+      'api::philosophy-page.philosophy-page': ApiPhilosophyPagePhilosophyPage;
       'api::postartscaleconsultationform.postartscaleconsultationform': ApiPostartscaleconsultationformPostartscaleconsultationform;
       'api::postartscalequoteform.postartscalequoteform': ApiPostartscalequoteformPostartscalequoteform;
       'api::postcreateyourdesign.postcreateyourdesign': ApiPostcreateyourdesignPostcreateyourdesign;
       'api::postgdprfrom.postgdprfrom': ApiPostgdprfromPostgdprfrom;
       'api::posthelpcontactform.posthelpcontactform': ApiPosthelpcontactformPosthelpcontactform;
       'api::postjoinasartist.postjoinasartist': ApiPostjoinasartistPostjoinasartist;
-      'api::promotion-assets-category.promotion-assets-category': ApiPromotionAssetsCategoryPromotionAssetsCategory;
       'api::promotion-assets-list.promotion-assets-list': ApiPromotionAssetsListPromotionAssetsList;
-      'api::promotionbundlelist.promotionbundlelist': ApiPromotionbundlelistPromotionbundlelist;
-      'api::promotioncollection.promotioncollection': ApiPromotioncollectionPromotioncollection;
-      'api::promotiondepthsale.promotiondepthsale': ApiPromotiondepthsalePromotiondepthsale;
-      'api::promotionflashsale.promotionflashsale': ApiPromotionflashsalePromotionflashsale;
       'api::promotionproduct.promotionproduct': ApiPromotionproductPromotionproduct;
       'api::promotions-category.promotions-category': ApiPromotionsCategoryPromotionsCategory;
-      'api::promotions-hero.promotions-hero': ApiPromotionsHeroPromotionsHero;
-      'api::promotions-sub-category.promotions-sub-category': ApiPromotionsSubCategoryPromotionsSubCategory;
+      'api::promotions-page.promotions-page': ApiPromotionsPagePromotionsPage;
       'api::promotionscategorydatalist.promotionscategorydatalist': ApiPromotionscategorydatalistPromotionscategorydatalist;
-      'api::promotionseasonalsale.promotionseasonalsale': ApiPromotionseasonalsalePromotionseasonalsale;
-      'api::promotionvip.promotionvip': ApiPromotionvipPromotionvip;
       'api::seoallpagecreate.seoallpagecreate': ApiSeoallpagecreateSeoallpagecreate;
-      'api::sizeart.sizeart': ApiSizeartSizeart;
-      'api::sizecomparison.sizecomparison': ApiSizecomparisonSizecomparison;
-      'api::sizedetail.sizedetail': ApiSizedetailSizedetail;
-      'api::sizefaq.sizefaq': ApiSizefaqSizefaq;
-      'api::sizeformat.sizeformat': ApiSizeformatSizeformat;
-      'api::sizegeometry.sizegeometry': ApiSizegeometrySizegeometry;
-      'api::sizehero.sizehero': ApiSizeheroSizehero;
-      'api::sizepremade.sizepremade': ApiSizepremadeSizepremade;
-      'api::sizetrust.sizetrust': ApiSizetrustSizetrust;
-      'api::sizetwomaterial.sizetwomaterial': ApiSizetwomaterialSizetwomaterial;
-      'api::sizeyourformat.sizeyourformat': ApiSizeyourformatSizeyourformat;
-      'api::spineadvantage.spineadvantage': ApiSpineadvantageSpineadvantage;
-      'api::spineget.spineget': ApiSpinegetSpineget;
-      'api::spinehero.spinehero': ApiSpineheroSpinehero;
-      'api::spinenodrill.spinenodrill': ApiSpinenodrillSpinenodrill;
-      'api::spineonesystem.spineonesystem': ApiSpineonesystemSpineonesystem;
-      'api::spineslider.spineslider': ApiSpinesliderSpineslider;
-      'api::spinestep.spinestep': ApiSpinestepSpinestep;
-      'api::spinethreemin.spinethreemin': ApiSpinethreeminSpinethreemin;
+      'api::size-page.size-page': ApiSizePageSizePage;
+      'api::spine-page.spine-page': ApiSpinePageSpinePage;
       'api::subscribeclient.subscribeclient': ApiSubscribeclientSubscribeclient;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

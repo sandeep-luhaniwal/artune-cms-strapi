@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_size_comparisons",
+  "info": {
+    "displayName": "Comparison",
+    "icon": "balance-scale"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "tabel": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.tabel"
+      ]
+    }
+  }
+}

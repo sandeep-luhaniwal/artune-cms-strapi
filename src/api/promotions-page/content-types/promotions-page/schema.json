@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "promotions_pages",
+  "info": {
+    "singularName": "promotions-page",
+    "pluralName": "promotions-pages",
+    "displayName": "Promotions Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "promotions.hero",
+        "promotions.depthsale",
+        "promotions.flashsale",
+        "promotions.seasonalsale",
+        "promotions.vip",
+        "promotions.bundlelist",
+        "promotions.collection",
+        "promotions.featureddrop"
+      ]
+    }
+  }
+}

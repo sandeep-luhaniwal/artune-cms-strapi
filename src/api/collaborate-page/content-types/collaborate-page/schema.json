@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "collaborate_pages",
+  "info": {
+    "singularName": "collaborate-page",
+    "pluralName": "collaborate-pages",
+    "displayName": "Collaborate Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "collaborate.hero",
+        "collaborate.welcome",
+        "collaborate.whyjoin",
+        "collaborate.slider",
+        "collaborate.fit",
+        "collaborate.submissionreq",
+        "collaborate.ready"
+      ]
+    }
+  }
+}

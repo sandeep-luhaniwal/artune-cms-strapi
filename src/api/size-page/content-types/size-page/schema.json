@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "size_pages",
+  "info": {
+    "singularName": "size-page",
+    "pluralName": "size-pages",
+    "displayName": "Size Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "size.hero",
+        "size.art",
+        "size.geometry",
+        "size.premade",
+        "size.yourformat",
+        "size.twomaterial",
+        "size.detail",
+        "size.comparison",
+        "size.trust",
+        "size.faq",
+        "size.format"
+      ]
+    }
+  }
+}

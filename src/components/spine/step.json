@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_spine_steps",
+  "info": {
+    "displayName": "Step",
+    "icon": "list-ol"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    },
+    "spinestepcard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.spinestepcard"
+      ]
+    },
+    "button_img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "downlaodspdf_button": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "downlaodspdf_button_url": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "audios"
+      ]
+    }
+  }
+}

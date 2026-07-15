@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "artscale_pages",
+  "info": {
+    "singularName": "artscale-page",
+    "pluralName": "artscale-pages",
+    "displayName": "Artscale Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "artscale.hero",
+        "artscale.solution",
+        "artscale.premium",
+        "artscale.spine",
+        "artscale.story",
+        "artscale.how",
+        "artscale.partner",
+        "artscale.changespace"
+      ]
+    }
+  }
+}

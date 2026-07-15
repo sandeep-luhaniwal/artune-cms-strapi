@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_philosophy_ecos",
+  "info": {
+    "displayName": "Eco",
+    "icon": "leaf"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_url": {
+      "type": "string"
+    }
+  }
+}

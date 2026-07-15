@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_navbar_mega_menus",
+  "info": {
+    "displayName": "Mega Menu",
+    "icon": "th-large"
+  },
+  "options": {},
+  "attributes": {
+    "columns": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navbar.column"
+    },
+    "bottom_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navbar.link"
+    },
+    "featured_title": {
+      "type": "string"
+    },
+    "featured_subtitle": {
+      "type": "string"
+    },
+    "featured_button_label": {
+      "type": "string"
+    },
+    "featured_button_url": {
+      "type": "string"
+    },
+    "featured_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "featured_images_grid": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "featured_type": {
+      "type": "enumeration",
+      "enum": [
+        "image",
+        "video"
+      ]
+    }
+  }
+}

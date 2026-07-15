@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_spine_nodrills",
+  "info": {
+    "displayName": "No Drill",
+    "icon": "ban"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string"
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "spinenodrillcard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.spinenodrillcard"
+      ]
+    }
+  }
+}

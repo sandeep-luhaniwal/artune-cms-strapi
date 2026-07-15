@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_collaborate_whyjoins",
+  "info": {
+    "displayName": "Why Join",
+    "icon": "question"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "card": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.collaboratecardjoin"
+      ]
+    }
+  }
+}

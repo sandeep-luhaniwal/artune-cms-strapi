@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_size_trusts",
+  "info": {
+    "displayName": "Trust",
+    "icon": "shield-alt"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "sizetrustcard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.sizetrustcard"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_promotions_vips",
+  "info": {
+    "displayName": "VIP",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

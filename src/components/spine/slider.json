@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_spine_sliders",
+  "info": {
+    "displayName": "Slider",
+    "icon": "images"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "spineslidercard": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.spineslidercard"
+      ]
+    }
+  }
+}
