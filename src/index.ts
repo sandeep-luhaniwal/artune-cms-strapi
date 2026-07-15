@@ -124,12 +124,295 @@ async function processBase64Uploads(
   return { fileIds, fileUrls };
 }
 
+const PAGE_URL_MAP: Record<string, string> = {
+  'api::home-page.home-page': '/',
+  'api::about-page.about-page': '/about-us',
+  'api::philosophy-page.philosophy-page': '/our-eco-philosophy',
+  'api::size-page.size-page': '/materials-sizes',
+  'api::spine-page.spine-page': '/artune-spine',
+  'api::collaborate-page.collaborate-page': '/collaboration',
+  'api::artscale-page.artscale-page': '/art-scale',
+  'api::promotions-page.promotions-page': '/promotions',
+};
+
+const URL_PAGE_MAP: Record<string, string> = {
+  '/': 'api::home-page.home-page',
+  '/about-us': 'api::about-page.about-page',
+  '/our-eco-philosophy': 'api::philosophy-page.philosophy-page',
+  '/materials-sizes': 'api::size-page.size-page',
+  '/artune-spine': 'api::spine-page.spine-page',
+  '/collaboration': 'api::collaborate-page.collaborate-page',
+  '/art-scale': 'api::artscale-page.artscale-page',
+  '/promotions': 'api::promotions-page.promotions-page',
+};
+
+function getPageUidFromUrl(pageurl: string): string | null {
+  if (!pageurl) return null;
+  let pathStr = pageurl.trim();
+  if (pathStr.startsWith('http://') || pathStr.startsWith('https://')) {
+    try {
+      const urlObj = new URL(pathStr);
+      pathStr = urlObj.pathname;
+    } catch (e) {
+      // fallback
+    }
+  }
+  
+  if (pathStr !== '/' && pathStr.endsWith('/')) {
+    pathStr = pathStr.slice(0, -1);
+  }
+  if (!pathStr.startsWith('/')) {
+    pathStr = '/' + pathStr;
+  }
+
+  if (URL_PAGE_MAP[pathStr]) {
+    return URL_PAGE_MAP[pathStr];
+  }
+
+  for (const [route, uid] of Object.entries(URL_PAGE_MAP)) {
+    if (route !== '/' && pathStr.endsWith(route)) {
+      return uid;
+    }
+  }
+
+  return null;
+}
+
+async function syncPageSeoToAllPages(strapi: any, uid: string, result: any) {
+  const url = PAGE_URL_MAP[uid];
+  if (!url) return;
+
+  const targetStatus = (result && result.publishedAt) ? 'published' : 'draft';
+
+  const doc = await strapi.documents(uid).findOne({
+    documentId: result.documentId,
+    populate: ['seo', 'seo.shareImage'],
+    status: targetStatus,
+  });
+
+  if (!doc || !doc.seo) {
+    strapi.log.info(`[SEO Sync] No SEO component defined on ${uid} (${result.documentId}), skipping sync.`);
+    return;
+  }
+
+  const { metaTitle = '', metaDescription = '', shareImage = null } = doc.seo;
+
+  // Find existing seoallpagecreate entry matching the url
+  let existing: any = null;
+  if (url === '/') {
+    existing = await strapi.documents('api::seoallpagecreate.seoallpagecreate').findFirst({
+      filters: {
+        pageurl: { $in: ['/', 'https://artune-frontend.vercel.app', 'https://artune-frontend.vercel.app/'] }
+      },
+      populate: ['seodetails', 'image'],
+      status: targetStatus,
+    });
+  } else {
+    existing = await strapi.documents('api::seoallpagecreate.seoallpagecreate').findFirst({
+      filters: {
+        $or: [
+          { pageurl: { $eq: url } },
+          { pageurl: { $eq: `https://artune-frontend.vercel.app${url}` } },
+          { pageurl: { $endsWith: url } }
+        ]
+      },
+      populate: ['seodetails', 'image'],
+      status: targetStatus,
+    });
+  }
+
+  // Compare values to prevent loop
+  const existingMetaTitle = existing ? existing.meta_title : null;
+  let existingMetaDescription = '';
+  if (existing && Array.isArray(existing.seodetails)) {
+    const descObj = existing.seodetails.find((d: any) => d && d.key === 'meta_description');
+    if (descObj) {
+      existingMetaDescription = descObj.value;
+    }
+  }
+  let existingShareImageId = null;
+  if (existing && Array.isArray(existing.image) && existing.image.length > 0) {
+    existingShareImageId = existing.image[0].id;
+  }
+
+  const newShareImageId = shareImage ? shareImage.id : null;
+
+  if (
+    existing &&
+    metaTitle === existingMetaTitle &&
+    metaDescription === existingMetaDescription &&
+    newShareImageId === existingShareImageId
+  ) {
+    strapi.log.info(`[SEO Sync] Central seoallpagecreate is already in sync with page ${uid}, skipping.`);
+    return;
+  }
+
+  // Construct update data
+  const updateData: any = {};
+  updateData.meta_title = metaTitle;
+
+  if (shareImage) {
+    updateData.image = [shareImage.id];
+  } else {
+    updateData.image = [];
+  }
+
+  // Construct seodetails
+  let seodetails: any[] = [];
+  if (existing && Array.isArray(existing.seodetails)) {
+    seodetails = existing.seodetails.map((item: any) => ({
+      id: item.id,
+      __component: 'shared.seodetails',
+      key: item.key,
+      value: item.value
+    }));
+  }
+
+  const descIndex = seodetails.findIndex(d => d && d.key === 'meta_description');
+  if (descIndex > -1) {
+    seodetails[descIndex].value = metaDescription;
+  } else {
+    seodetails.push({
+      __component: 'shared.seodetails',
+      key: 'meta_description',
+      value: metaDescription,
+    });
+  }
+  updateData.seodetails = seodetails;
+
+  if (existing) {
+    strapi.log.info(`[SEO Sync] Updating existing seoallpagecreate entry (ID: ${existing.documentId}) for URL ${existing.pageurl} as ${targetStatus}`);
+    await strapi.documents('api::seoallpagecreate.seoallpagecreate').update({
+      documentId: existing.documentId,
+      data: updateData,
+      status: targetStatus,
+    });
+  } else {
+    const defaultPageUrl = `https://artune-frontend.vercel.app${url === '/' ? '' : url}`;
+    strapi.log.info(`[SEO Sync] Creating new seoallpagecreate entry for URL ${defaultPageUrl} as ${targetStatus}`);
+    await strapi.documents('api::seoallpagecreate.seoallpagecreate').create({
+      data: {
+        pageurl: defaultPageUrl,
+        ...updateData,
+      },
+      status: targetStatus,
+    });
+  }
+}
+
+async function syncAllPagesToPageSeo(strapi: any, result: any) {
+  const targetStatus = (result && result.publishedAt) ? 'published' : 'draft';
+
+  const seoAllPage = await strapi.documents('api::seoallpagecreate.seoallpagecreate').findOne({
+    documentId: result.documentId,
+    populate: ['seodetails', 'image'],
+    status: targetStatus,
+  });
+
+  if (!seoAllPage || !seoAllPage.pageurl) return;
+
+  const targetUid = getPageUidFromUrl(seoAllPage.pageurl);
+  if (!targetUid) {
+    strapi.log.info(`[SEO Sync] No matching page found for URL: ${seoAllPage.pageurl}`);
+    return;
+  }
+
+  const pageDoc = await strapi.documents(targetUid).findFirst({
+    populate: ['seo', 'seo.shareImage'],
+    status: targetStatus,
+  });
+
+  if (!pageDoc) {
+    strapi.log.info(`[SEO Sync] Page document not found for ${targetUid}`);
+    return;
+  }
+
+  const metaTitle = seoAllPage.meta_title || '';
+  let metaDescription = '';
+  if (Array.isArray(seoAllPage.seodetails)) {
+    const descObj = seoAllPage.seodetails.find((d: any) => d && d.key === 'meta_description');
+    if (descObj) {
+      metaDescription = descObj.value || '';
+    }
+  }
+
+  let shareImageId: number | null = null;
+  if (Array.isArray(seoAllPage.image) && seoAllPage.image.length > 0) {
+    shareImageId = seoAllPage.image[0].id;
+  }
+
+  const currentSeo = pageDoc.seo || {};
+  const currentMetaTitle = currentSeo.metaTitle || '';
+  const currentMetaDescription = currentSeo.metaDescription || '';
+  const currentShareImageId = currentSeo.shareImage ? currentSeo.shareImage.id : null;
+
+  if (
+    metaTitle === currentMetaTitle &&
+    metaDescription === currentMetaDescription &&
+    shareImageId === currentShareImageId
+  ) {
+    strapi.log.info(`[SEO Sync] Page ${targetUid} is already in sync with seoallpagecreate, skipping.`);
+    return;
+  }
+
+  strapi.log.info(`[SEO Sync] Syncing seoallpagecreate updates to page ${targetUid} as ${targetStatus}`);
+  
+  await strapi.documents(targetUid).update({
+    documentId: pageDoc.documentId,
+    data: {
+      seo: {
+        id: currentSeo.id,
+        metaTitle: metaTitle,
+        metaDescription: metaDescription,
+        shareImage: shareImageId ? shareImageId : null,
+      }
+    },
+    status: targetStatus,
+  });
+}
+
 export default {
   /**
    * An asynchronous register function that runs before
    * your application is initialized.
    */
   register({ strapi }: { strapi: Core.Strapi }) {
+    // Bidirectional SEO synchronization middleware
+    strapi.documents.use(async (context, next) => {
+      const { uid, action } = context;
+
+      const result = await next();
+
+      const pageUids = [
+        'api::home-page.home-page',
+        'api::about-page.about-page',
+        'api::philosophy-page.philosophy-page',
+        'api::size-page.size-page',
+        'api::spine-page.spine-page',
+        'api::collaborate-page.collaborate-page',
+        'api::artscale-page.artscale-page',
+        'api::promotions-page.promotions-page',
+      ];
+
+      if (pageUids.includes(uid) && (action === 'create' || action === 'update') && result) {
+        try {
+          await syncPageSeoToAllPages(strapi, uid, result);
+        } catch (err: any) {
+          strapi.log.error(`[SEO Sync] Error syncing SEO from page ${uid}: ${err.message}`);
+        }
+      }
+
+      if (uid === 'api::seoallpagecreate.seoallpagecreate' && (action === 'create' || action === 'update') && result) {
+        try {
+          await syncAllPagesToPageSeo(strapi, result);
+        } catch (err: any) {
+          strapi.log.error(`[SEO Sync] Error syncing SEO to page from seoallpagecreate: ${err.message}`);
+        }
+      }
+
+      return result;
+    });
+
     strapi.documents.use(async (context, next) => {
       const { uid, action, params } = context;
 
